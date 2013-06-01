@@ -4,7 +4,7 @@
     <string name="app_name">IdeaBlock</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-	<string name="main_title">Idea_Block</string>
+    <string name="main_title">Idea_Block</string>
     <string name="name">Full Name</string>
     <string name="mobile">Mobile Number</string>
     <string name="email">Email</string>
@@ -19,5 +19,6 @@
     <string name="loginForgotEmail"><u>Forgot your e-mail?</u></string>
     <string name="loginForgotPassword"><u>Forgot your password?</u></string>
     <string name="title_activity_send_money">SendMoney</string>
-    
+    <string name="title_activity_request_money">RequestMoney</string>
+
 </resources>

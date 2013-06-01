@@ -2,14 +2,55 @@ package com.example.ideablock;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
 
 public class Home extends Activity {
 
+	ImageView sendMoney ;
+	ImageView depositeMoney ;
+	ImageView requestMoney;
+	ImageView instantHelp ;
+	ImageView transactions ;
+	ImageView contacts ;
+	ImageView merchants ;
+	ImageView myNotes ;
+	ImageView aroundMe ;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+		
+		sendMoney = (ImageView) findViewById(R.id.image_sendMoney);
+		depositeMoney = (ImageView) findViewById(R.id.image_depositeMoney);
+		requestMoney = (ImageView) findViewById(R.id.image_requestMoney);
+		instantHelp = (ImageView) findViewById(R.id.image_instantHelp);
+		transactions = (ImageView) findViewById(R.id.image_transactionHistory);
+		contacts = (ImageView) findViewById(R.id.image_contacts);
+		merchants = (ImageView) findViewById(R.id.image_merchants);
+		myNotes = (ImageView) findViewById(R.id.image_myNotes);
+		aroundMe = (ImageView) findViewById(R.id.image_aroundMe);
+		
+		sendMoney.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(Home.this, SendMoney.class));
+			}
+		});
+		
+		requestMoney.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(Home.this, RequestMoney.class));
+			}
+		});
 	}
 
 	@Override

@@ -30,6 +30,14 @@
             android:name="com.example.ideablock.Login"
             android:label="@string/title_activity_login" >
         </activity>
+        <activity
+            android:name="com.example.ideablock.SendMoney"
+            android:label="@string/title_activity_send_money" >
+        </activity>
+        <activity
+            android:name="com.example.ideablock.RequestMoney"
+            android:label="@string/title_activity_request_money" >
+        </activity>
     </application>
 
 </manifest>

@@ -96,7 +96,7 @@ public class Login extends Activity {
 				runOnUiThread(new Runnable() {
 					public void run() {
 						Toast.makeText(Login.this, httpResponse, 0);
-						startActivity(new Intent(Login.this,Home.class));
+
 					}
 					});
 
@@ -115,6 +115,7 @@ public class Login extends Activity {
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
+			startActivity(new Intent(Login.this,Home.class));
         }
     	
 
@@ -124,6 +125,7 @@ public class Login extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_login, menu);
+		
 		return true;
 	}
 
