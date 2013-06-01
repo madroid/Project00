@@ -20,5 +20,16 @@
     <string name="loginForgotPassword"><u>Forgot your password?</u></string>
     <string name="title_activity_send_money">SendMoney</string>
     <string name="title_activity_request_money">RequestMoney</string>
-
+    <string name="title_activity_deposite_money">DepositeMoney</string>
+	<string name="deposite_bank_prompt">Bank</string>
+    
+    <string-array name="deposite_array_bank_name">
+    	<item >SBI</item>
+    	<item >ICICI Bank</item>
+    	<item >HDFC Bank</item>
+    	<item >citibank</item>
+    	<item >Axis Bank</item>
+    	<item>Canara Bank</item>    
+    </string-array>
+    
 </resources>

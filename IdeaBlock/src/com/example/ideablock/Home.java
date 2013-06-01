@@ -18,12 +18,12 @@ public class Home extends Activity {
 	ImageView merchants ;
 	ImageView myNotes ;
 	ImageView aroundMe ;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		
+
 		sendMoney = (ImageView) findViewById(R.id.image_sendMoney);
 		depositeMoney = (ImageView) findViewById(R.id.image_depositeMoney);
 		requestMoney = (ImageView) findViewById(R.id.image_requestMoney);
@@ -33,24 +33,35 @@ public class Home extends Activity {
 		merchants = (ImageView) findViewById(R.id.image_merchants);
 		myNotes = (ImageView) findViewById(R.id.image_myNotes);
 		aroundMe = (ImageView) findViewById(R.id.image_aroundMe);
-		
+
 		sendMoney.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(Home.this, SendMoney.class));
 			}
 		});
-		
+
+		depositeMoney.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(Home.this,DepositMoney.class));
+			}
+		});
+
 		requestMoney.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(Home.this, RequestMoney.class));
 			}
 		});
+
+
 	}
 
 	@Override

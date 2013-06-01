@@ -38,6 +38,10 @@
             android:name="com.example.ideablock.RequestMoney"
             android:label="@string/title_activity_request_money" >
         </activity>
+        <activity
+            android:name="com.example.ideablock.DepositMoney"
+            android:label="@string/title_activity_deposite_money" >
+        </activity>
     </application>
 
 </manifest>
