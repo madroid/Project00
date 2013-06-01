@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IdeaBlock</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+	<string name="main_title">Idea_Block</string>
+    <string name="name">Full Name</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signUpButton">Sign Up</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_login">Login</string>
+    <string name="loginUsername"> ID/E-Mail Address/ Ph.no</string>
+    <string name="loginTitle"></string>
+    <string name="loginPassword">Password</string>
+    <string name="loginButton">Sign In</string>
+    <string name="loginForgotEmail"><u>Forgot your e-mail?</u></string>
+    <string name="loginForgotPassword"><u>Forgot your password?</u></string>
+    <string name="title_activity_send_money">SendMoney</string>
+    
+</resources>
