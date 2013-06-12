@@ -1,8 +1,8 @@
-package com.example.ideablock;
-
+package patidar.sagar.ideablock;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -13,17 +13,22 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import android.os.AsyncTask;
-import android.os.Bundle;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+
 
 public class MainActivity extends Activity {
 
@@ -38,6 +43,8 @@ public class MainActivity extends Activity {
 	HttpResponse httpResponse;
 	HttpClient httpClient ;
 	HttpPost httppost ;
+	
+	JSONObject jObj;
 	
 	ProgressDialog pDialog ;
 	//JSONObject jsonParser = new JSONParser();
@@ -79,8 +86,6 @@ public class MainActivity extends Activity {
         
     }
     
-    // Async Task
-    
     class registerUser extends AsyncTask<String, String, String>{
     	@Override
     	protected void onPreExecute(){
@@ -113,19 +118,22 @@ public class MainActivity extends Activity {
 				httppost.setEntity(new UrlEncodedFormEntity(param));
 				
 				ResponseHandler<String> responseHandler = new BasicResponseHandler();
-				final String httpResponse = httpClient.execute(httppost, responseHandler);
-				Log.d("String Result",httpResponse);
-				runOnUiThread(new Runnable() {
-					public void run() {
-						Toast.makeText(MainActivity.this, httpResponse, 0);
-						startActivity(new Intent(MainActivity.this,Home.class));
-					}
-					});
-
-			}
-			catch(Exception e){
-				System.out.println("error occured");
-			}
+				final String httpresponse = httpClient.execute(httppost, responseHandler);
+				
+				Log.d("String Result",httpresponse);
+				jObj = new JSONObject(httpresponse);
+				Log.d("CHECK OUTPUT", jObj.getJSONObject("result").getString("success"));
+				//if(Integer.parseInt(jObj.getJSONObject("success").toString())==0){
+					runOnUiThread(new Runnable() {
+						public void run() {
+							Toast.makeText(MainActivity.this, httpresponse, 0);
+							startActivity(new Intent(MainActivity.this,Home.class));
+						}
+						});
+				}
+				catch(Exception e){
+					System.out.println("error occured");
+				}
 			
 			
 			return null;

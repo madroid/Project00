@@ -1,11 +1,12 @@
-package com.example.ideablock;
+package patidar.sagar.ideablock;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+
 
 public class Home extends Activity {
 
@@ -58,6 +59,25 @@ public class Home extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(Home.this, RequestMoney.class));
+			}
+		});
+		
+		transactions.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Home.this,Transactions.class);
+				startActivity(intent);
+				
+			}
+		});
+		
+		contacts.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Home.this,Contacts.class);
+				startActivity(intent);
 			}
 		});
 

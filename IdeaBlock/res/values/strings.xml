@@ -21,15 +21,64 @@
     <string name="title_activity_send_money">SendMoney</string>
     <string name="title_activity_request_money">RequestMoney</string>
     <string name="title_activity_deposite_money">DepositeMoney</string>
-	<string name="deposite_bank_prompt">Bank</string>
-    
+    <string name="deposite_bank_prompt">Bank</string>
+
     <string-array name="deposite_array_bank_name">
-    	<item >SBI</item>
-    	<item >ICICI Bank</item>
-    	<item >HDFC Bank</item>
-    	<item >citibank</item>
-    	<item >Axis Bank</item>
-    	<item>Canara Bank</item>    
+        <item>SBI</item>
+        <item>ICICI Bank</item>
+        <item>HDFC Bank</item>
+        <item>citibank</item>
+        <item>Axis Bank</item>
+        <item>Canara Bank</item>
     </string-array>
-    
+
+    <string name="trans_month_prompt">Select Month</string>
+
+    <string-array name="trans_month_name">
+        <item>Month</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string name="trans_year_prompt">Select Year</string>
+
+    <string-array name="trans_year">
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+        <item>2028</item>
+        <item>2029</item>
+        <item>2030</item>
+        <item>2031</item>
+        <item>2032</item>
+    </string-array>
+
+    <string name="title_activity_google_map">GoogleMap</string>
+    <string name="title_activity_map">Map</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_transactions">Transactions</string>
+    <string name="title_activity_contacts">Contacts</string>
+
 </resources>

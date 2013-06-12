@@ -1,8 +1,9 @@
-package com.example.ideablock;
+package patidar.sagar.ideablock;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+
 
 public class SendMoney extends Activity {
 
