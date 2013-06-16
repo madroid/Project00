@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_selector"
     android:orientation="horizontal"
     android:padding="5dip" >
 
@@ -16,7 +15,7 @@
         android:text="ID "
         android:layout_marginLeft="10dp"
         android:textColor="#040404"
-        android:textSize="15dip"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="sans" />
 
@@ -27,7 +26,7 @@
         android:layout_toRightOf="@id/trans_ID"
         android:text="ID_Value "
         android:textColor="#040404"
-        android:textSize="15dip"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="sans" />
 
@@ -41,7 +40,7 @@
         android:layout_marginTop="1dip"
         android:text="Amount: Rs. "
         android:textColor="#343434"
-        android:textSize="10dip" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/trans_amount2"
@@ -52,7 +51,7 @@
         android:layout_toRightOf="@id/trans_amount"
         android:text="Amount_Value "
         android:textColor="#343434"
-        android:textSize="10dip" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/trans_date"
@@ -64,7 +63,7 @@
         android:layout_marginTop="1dip"
         android:text="Date: "
         android:textColor="#343434"
-        android:textSize="10dip" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/trans_date2"
@@ -75,30 +74,15 @@
         android:layout_below="@id/trans_amount"
         android:text="Date_Value "
         android:textColor="#343434"
-        android:textSize="10dip" />
-
-    <TextView
-        android:id="@+id/trans_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/trans_ID"
-        android:layout_marginRight="5dip"
-        android:layout_gravity="right"
-        android:text="time"
-        android:textColor="#10bcc9"
-        android:textSize="10dip"
-        android:textStyle="bold" />
-
+        android:textSize="12sp" />
 
     <ImageView
+        android:id="@+id/trans_image_row_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
-        android:layout_below="@id/trans_time"
-        
         android:src="@drawable/button_details" />
  
 </RelativeLayout>

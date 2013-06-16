@@ -13,19 +13,21 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -56,6 +58,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        
         //Text box inputs
         inputName = (EditText) findViewById(R.id.inputName);
         inputMobileNumber = (EditText) findViewById(R.id.inputMobileNumber);
@@ -65,6 +68,14 @@ public class MainActivity extends Activity {
         //Button
         buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
         buttonSingIn = (Button) findViewById(R.id.buttonSingIn);
+        
+        TextView title = (TextView) findViewById(R.id.main_text_title);
+        
+        // Add custom Font Style
+        Constants.setButtonFontStyle(getAssets(), this.buttonSignUp,this.buttonSingIn);
+        Constants.setEditTextFontStyle(getAssets(), this.inputEmailID,this.inputMobileNumber,this.inputName,this.inputPassword);
+        Constants.setTextViewFontStyle(getAssets(), title);
+        
         
         buttonSingIn.setOnClickListener(new View.OnClickListener() {
 			
@@ -156,5 +167,7 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
+    
+    
     
 }

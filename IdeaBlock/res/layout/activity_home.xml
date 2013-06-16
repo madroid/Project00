@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ScrollView1"
+    android:background="@drawable/backdrop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home" >
@@ -18,7 +19,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:layout_marginTop="5dp" >
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="65dp" >
 
             <ImageView
                 android:id="@+id/image_profilePic"
@@ -68,7 +70,6 @@
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#dcdcdc"
             android:shrinkColumns="*"
             android:stretchColumns="*" >
 
@@ -101,7 +102,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_send_money" />
                     </TableRow>
 
                     <TableRow
@@ -110,6 +111,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                         	android:id="@+id/home_send_money"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Send Money"
@@ -141,7 +143,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_deposit_money" />
                     </TableRow>
 
                     <TableRow
@@ -150,6 +152,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_deposite_money"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Deposite Money"
@@ -181,7 +184,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_request_money" />
                     </TableRow>
 
                     <TableRow
@@ -190,6 +193,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_request_money"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Request Money"
@@ -231,7 +235,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_instant_help" />
                     </TableRow>
 
                     <TableRow
@@ -240,6 +244,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_instant_help"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Instant Help"
@@ -271,7 +276,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_transactions" />
                     </TableRow>
 
                     <TableRow
@@ -280,6 +285,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_transaction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Transaction"
@@ -311,7 +317,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_contacts" />
                     </TableRow>
 
                     <TableRow
@@ -320,6 +326,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_contacts"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Contacts"
@@ -362,7 +369,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_merchants" />
                     </TableRow>
 
                     <TableRow
@@ -371,6 +378,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_merchants"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Merchants"
@@ -402,7 +410,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_my_notes" />
                     </TableRow>
 
                     <TableRow
@@ -411,6 +419,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_my_notes"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="My Notes"
@@ -443,7 +452,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/profilepicture" />
+                            android:src="@drawable/icon_around_me" />
                     </TableRow>
 
                     <TableRow
@@ -452,6 +461,7 @@
                         android:gravity="center_vertical" >
 
                         <TextView
+                            android:id="@+id/home_around_me"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Around Me"

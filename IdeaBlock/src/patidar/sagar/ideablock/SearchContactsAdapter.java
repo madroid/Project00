@@ -20,7 +20,7 @@ public class SearchContactsAdapter extends ArrayAdapter<HashMap<String, String>>
 	private int mTextViewID ;
 	private List<HashMap<String, String>> data_list ;
 	private ArrayList<HashMap<String, String>> original_data_list;
-	private Activity contxt ;
+	private static Activity contxt ;
 	
 	public SearchContactsAdapter(Activity context,int resource, int textViewResourceId,
 			ArrayList<HashMap<String, String>> objects) {
@@ -44,11 +44,12 @@ public class SearchContactsAdapter extends ArrayAdapter<HashMap<String, String>>
 		private ImageView contacts_button_request ;
 		
 			public ViewHolder(View v){
-				this.contacts_id = (TextView) v.findViewById(R.id.contacts_id);
-				this.contacts_name = (TextView) v.findViewById(R.id.contacts_name);
+				this.contacts_id = (TextView) v.findViewById(R.id.row_contacts_id);
+				this.contacts_name = (TextView) v.findViewById(R.id.row_contacts_name);
 				this.contacts_button_request = (ImageView) v.findViewById(R.id.contacts_button_request);
 				this.contacts_button_send = (ImageView) v.findViewById(R.id.contacts_button_send);
 				this.contacts_default_pic2 = (ImageView) v.findViewById(R.id.contacts_default_pic2);
+				Constants.setTextViewFontStyle(contxt.getAssets(), this.contacts_id,this.contacts_name);
 			}
 	}
 	
@@ -80,7 +81,7 @@ public class SearchContactsAdapter extends ArrayAdapter<HashMap<String, String>>
                     data_list.add(hmap);
                 }
             }
-        }
+        }	 
         notifyDataSetChanged();
     }
 	
