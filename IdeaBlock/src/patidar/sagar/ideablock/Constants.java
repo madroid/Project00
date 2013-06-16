@@ -16,7 +16,7 @@ public class Constants {
 	public static final String TABLE_USER_DETAILS_USERNAME = "loginUsername";
 	
 	
-	public static final String URL_SERVER_PROJECT = "http://10.0.2.2/idea/Practice/";
+	public static final String URL_SERVER_PROJECT = "http://10.0.2.2/iServer/idea/Practice/";
 
 	public static final String CUSTOM_FONT = "fonts/Futura Medium.ttf";
 	

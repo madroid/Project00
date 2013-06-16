@@ -25,15 +25,6 @@ public class Home extends Activity {
 	private TextView text_id;
 	private TextView text_money;
 	
-	private TextView text_send ;
-	private TextView text_deposite;
-	private TextView text_request;
-	private TextView text_instant;
-	private TextView text_transaction;
-	private TextView text_contacts;
-	private TextView text_merchants;
-	private TextView text_notes;
-	private TextView text_around;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,22 +41,11 @@ public class Home extends Activity {
 		myNotes = (ImageView) findViewById(R.id.image_myNotes);
 		aroundMe = (ImageView) findViewById(R.id.image_aroundMe);
 
-		this.text_around = (TextView) findViewById(R.id.home_around_me);
-		this.text_contacts = (TextView) findViewById(R.id.home_contacts);
-		this.text_deposite = (TextView) findViewById(R.id.home_deposite_money);
-		this.text_instant = (TextView) findViewById(R.id.home_instant_help);
-		this.text_merchants = (TextView) findViewById(R.id.home_merchants);
-		this.text_notes = (TextView) findViewById(R.id.home_my_notes);
-		this.text_request = (TextView) findViewById(R.id.home_request_money);
-		this.text_send = (TextView) findViewById(R.id.home_send_money);
-		this.text_transaction = (TextView) findViewById(R.id.home_transaction);
 		this.text_id = (TextView) findViewById(R.id.userID);
 		this.text_name = (TextView) findViewById(R.id.username);
 		this.text_money = (TextView) findViewById(R.id.balanceAmount);
 		
-		Constants.setTextViewFontStyle(getAssets(), this.text_around,this.text_contacts,this.text_deposite,this.text_instant,
-				this.text_merchants,this.text_notes,this.text_request,this.text_send,this.text_transaction,this.text_id,this.text_money,
-				this.text_name);
+		Constants.setTextViewFontStyle(getAssets(), this.text_id,this.text_money,this.text_name);
 		
 		Intent i = getIntent();
 		text_name.setText(i.getStringExtra("user_name"));

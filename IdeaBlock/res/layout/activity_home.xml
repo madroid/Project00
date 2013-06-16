@@ -1,71 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ScrollView1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Home" >
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <!-- 0. First Child of linear layout: header: profile picture, name, money, id -->
+
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical" >
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="65dp" >
 
-        <!-- 0. First Child of linear layout: header: profile picture, name, money, id -->
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
+        <ImageView
+            android:id="@+id/image_profilePic"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="65dp" >
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/profilepicture" />
 
-            <ImageView
-                android:id="@+id/image_profilePic"
-				                
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/profilepicture" />
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/image_profilePic"
+            android:text="Sagar Patidar"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:layout_toRightOf="@id/image_profilePic"
-                android:text="Sagar Patidar"
-                android:textSize="12sp" />
+        <TextView
+            android:id="@+id/userID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/image_profilePic"
+            android:text="ID: 9899637620"
+            android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/userID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/username"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image_profilePic"
-                android:text="ID: 9899637620"
-                android:textSize="10sp" />
+        <TextView
+            android:id="@+id/balanceAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/image_profilePic"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:text="Rs. 10,98,263" />
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/balanceAmount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="30dp"
-                android:gravity="center"
-                android:text="Rs. 10,98,263" />
-        </RelativeLayout>
-        <!-- 00. First Child of linear layout: header: profile picture, name, money, id -->
+    <!-- 00. First Child of linear layout: header: profile picture, name, money, id -->
 
 
-        <!-- 0. Second Child of linear layout: Containing all other links -->
+    <!-- 0. Second Child of linear layout: Containing all other links -->
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
         <TableLayout
             android:layout_width="fill_parent"
@@ -78,406 +75,162 @@
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal" 
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal" >
 
                 <!-- 1.1. First row First Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_sendMoney"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:clickable="true"
+                    android:src="@drawable/icon_send_money" />
 
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_sendMoney"
-                            android:clickable="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_send_money" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                         	android:id="@+id/home_send_money"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Send Money"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp" />
-                        
-                    </TableRow>
-                </TableLayout>
                 <!-- 1.1. First row First Column ends -->
 
 
                 <!-- 1.2 First row Second Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_depositeMoney"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_depositeMoney"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_deposit_money" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_deposite_money"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Deposite Money"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp" />
-                        
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_deposit_money" />
                 <!-- 1.2 First row Second Column ends -->
 
 
                 <!-- 1.3 First row third Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_requestMoney"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_requestMoney"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_request_money" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_request_money"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Request Money"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp"/>
-                        
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_request_money" />
                 <!-- 1.3 First row third Column begins -->
-
             </TableRow>
             <!-- 1. First row ends -->
-            
+
+
             <!-- 2. Second row begins -->
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="5dp" >
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal" >
 
                 <!-- 2.1. Second row First Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_instantHelp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_instantHelp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_instant_help" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_instant_help"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Instant Help"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp" />
-                        
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_instant_help" />
                 <!-- 2.1. Second row First Column ends -->
 
 
                 <!-- 2.2 Second row Second Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_transactionHistory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_transactionHistory"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_transactions" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_transaction"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Transaction"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp" />
-                        
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_transactions" />
                 <!-- 2.2 Second row Second Column ends -->
 
 
                 <!-- 2.3 Second row third Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_contacts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_contacts"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_contacts" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_contacts"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Contacts"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp"/>
-                        
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_contacts" />
                 <!-- 2.3 second row third Column begins -->
 
             </TableRow>
-            <!-- 2. Second row ends -->            
+            <!-- 2. Second row ends -->
+
 
             <!-- 3. Third row begins -->
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="5dp" >
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal" >
 
                 <!-- 3.1. Third row First Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_merchants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_merchants"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_merchants" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_merchants"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Merchants"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp" />
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_merchants" />
                 <!-- 3.1. Third row First Column ends -->
 
 
                 <!-- 3.2 Third row Second Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_myNotes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_myNotes"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_my_notes" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_my_notes"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="My Notes"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp" />
-                        
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_my_notes" />
                 <!-- 3.2 Third row Second Column ends -->
 
 
                 <!-- 3.3 Third row third Column begins -->
 
-                <TableLayout
+                <ImageView
+                    android:id="@+id/image_aroundMe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" >
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <ImageView
-                            android:id="@+id/image_aroundMe"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_around_me" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/home_around_me"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Around Me"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@android:color/black"
-                            android:textSize="10sp"/>
-                        
-                    </TableRow>
-                </TableLayout>
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_around_me" />
                 <!-- 3.3 Third row third Column begins -->
 
             </TableRow>
-            <!-- 3. Third row ends -->            
+            <!-- 3. Third row ends -->
 
         </TableLayout>
         <!-- 00. Second Child of linear layout: Containing all other links -->
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>
