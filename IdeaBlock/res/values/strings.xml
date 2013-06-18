@@ -28,7 +28,6 @@
     <string name="title_activity_transactions">Transactions</string>
     <string name="title_activity_contacts">Contacts</string>
     <string name="title_activity_notes">My Notes</string>
-    <string name="API_KEY">fkasdfjhadlkfadjfalsdfasdlfasdfasdlfaj</string>
     <string-array name="deposite_array_bank_name">
         <item>SBI</item>
         <item>ICICI Bank</item>

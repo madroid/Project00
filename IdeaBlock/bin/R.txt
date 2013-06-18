@@ -71,11 +71,13 @@ int drawable icon_send_money 0x7f020026
 int drawable icon_transactions 0x7f020027
 int drawable image_bg 0x7f020028
 int drawable list_selector 0x7f020029
-int drawable profilepicture 0x7f02002a
-int drawable profilepicture1 0x7f02002b
-int drawable style_app_common 0x7f02002c
-int drawable trans_gradient_bg 0x7f02002d
-int drawable trans_gradient_bg_hover 0x7f02002e
+int drawable mark_blue 0x7f02002a
+int drawable mark_red 0x7f02002b
+int drawable profilepicture 0x7f02002c
+int drawable profilepicture1 0x7f02002d
+int drawable style_app_common 0x7f02002e
+int drawable trans_gradient_bg 0x7f02002f
+int drawable trans_gradient_bg_hover 0x7f020030
 int id ScrollView1 0x7f050017
 int id ScrollView2 0x7f05003a
 int id ScrollView3 0x7f050009
@@ -123,10 +125,10 @@ int id loginPassword 0x7f050022
 int id loginUsername 0x7f050021
 int id loginbutton 0x7f050023
 int id main_text_title 0x7f050026
-int id map_button_search 0x7f05002f
-int id map_search 0x7f05002e
+int id map 0x7f050030
+int id map_button_go 0x7f05002f
+int id map_edit_search 0x7f05002e
 int id map_title 0x7f05002d
-int id map_view 0x7f050030
 int id menu_settings 0x7f050057
 int id none 0x7f050000
 int id normal 0x7f050001
@@ -189,7 +191,6 @@ int menu contacts 0x7f0a0007
 int menu map 0x7f0a0008
 int menu notes 0x7f0a0009
 int menu transactions 0x7f0a000a
-int string API_KEY 0x7f060030
 int string action_settings 0x7f06002c
 int string app_name 0x7f060015
 int string auth_client_availability_notification_title 0x7f06000f
@@ -238,8 +239,8 @@ int string title_activity_notes 0x7f06002f
 int string title_activity_request_money 0x7f060027
 int string title_activity_send_money 0x7f060026
 int string title_activity_transactions 0x7f06002d
-int string trans_month_prompt 0x7f060031
-int string trans_year_prompt 0x7f060032
+int string trans_month_prompt 0x7f060030
+int string trans_year_prompt 0x7f060031
 int style AppBaseTheme 0x7f090000
 int style AppTheme 0x7f090001
 int[] styleable MapAttrs { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d }

@@ -9,7 +9,7 @@
         android:required="true" />
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="16" />
 
     <!-- User Permissions -->
@@ -34,13 +34,14 @@
         <!-- Adding Android API Key -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAb6tZiNStC81IkJ5tQbQ82PSioIIM1b6E" />
+            android:value="AIzaSyBJk0SiNINYMomeS5t2g33yCT6POne2j78" />
 
         <!-- Google Map Library -->
 
         <activity
             android:name="patidar.sagar.ideablock.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,40 +50,49 @@
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Home"
-            android:label="@string/title_activity_home" >
+            android:label="@string/title_activity_home" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Login"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.SendMoney"
-            android:label="@string/title_activity_send_money" >
+            android:label="@string/title_activity_send_money" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.RequestMoney"
-            android:label="@string/title_activity_request_money" >
+            android:label="@string/title_activity_request_money" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.DepositMoney"
-            android:label="@string/title_activity_deposite_money" >
+            android:label="@string/title_activity_deposite_money" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Transactions"
-            android:label="@string/title_activity_transactions" >
+            android:label="@string/title_activity_transactions" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Contacts"
             android:label="@string/title_activity_contacts"
-            android:windowSoftInputMode="stateHidden" >
+            android:windowSoftInputMode="stateHidden" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Notes"
-            android:label="@string/title_activity_notes" >
+            android:label="@string/title_activity_notes" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Map"
-            android:label="@string/title_activity_map" >
+            android:label="@string/title_activity_map" 
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

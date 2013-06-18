@@ -1,48 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="10dp"
     android:background="@drawable/backdrop"
-    android:orientation="vertical"
-    tools:context=".Map" >
-
-    <TextView
+    android:orientation="vertical">
+    
+    <TextView 
         android:id="@+id/map_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:text="@string/title_activity_map"
-        android:textSize="20sp" />
-
-    <LinearLayout
+        android:text="Around Me"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="40dp"/>
+    
+    <LinearLayout 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal" >
-
-        <EditText
-            android:id="@+id/map_search"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+        
+        <EditText 
+            android:id="@+id/map_edit_search"
             android:layout_width="0dp"
+            android:layout_weight="4"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:hint="Type you query"
-            android:singleLine="true" />
-
-        <Button
-            android:id="@+id/map_button_search"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:hint="search anything. eg: coffee"
+            android:textSize="15sp"/>
+        
+        <Button 
+            android:id="@+id/map_button_go"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Search" />
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Search"/>
+        
     </LinearLayout>
 
-    <com.google.android.maps.MapView
-        android:id="@+id/map_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:apiKey="@string/API_KEY"
-        android:clickable="true" />
+<fragment
+          android:id="@+id/map"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:name="com.google.android.gms.maps.MapFragment"/>
 
+          
 </LinearLayout>

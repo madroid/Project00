@@ -3,6 +3,7 @@ package com.example.nailingmaps;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -12,6 +13,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -22,12 +24,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -37,8 +41,8 @@ public class MainMapActivity extends Activity{
 	private EditText edit_search;
 	private Button   button_search ;
 	
-	private String searchType = "";
-	private String searchRadius ;
+	private String searchType = "food";
+	private int searchRadius  = 1000;
 	private static final String API_KEY = "AIzaSyBJk0SiNINYMomeS5t2g33yCT6POne2j78";
 	
 	private Marker selfMarker;
@@ -50,6 +54,11 @@ public class MainMapActivity extends Activity{
 	
 	private GoogleMap mMap ;
 	private UiSettings uiSettings ;
+	
+	private static int minLat = Integer.MAX_VALUE;
+	private static int minLong = Integer.MAX_VALUE;
+	private static int maxLat = Integer.MIN_VALUE;
+	private static int maxLong = Integer.MIN_VALUE;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,6 +74,7 @@ public class MainMapActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String type = edit_search.getText().toString();
+				edit_search.setText(null);
 				updateSearchType(type);
 			}
 		});
@@ -86,6 +96,7 @@ public class MainMapActivity extends Activity{
 		uiSettings.setMyLocationButtonEnabled(true);
 		uiSettings.setRotateGesturesEnabled(false);
 		uiSettings.setTiltGesturesEnabled(false);
+		
 	}
 	
 	private void updatePlaces(){
@@ -100,7 +111,7 @@ public class MainMapActivity extends Activity{
 					.title("You are here!")
 					.icon(BitmapDescriptorFactory.fromResource(R.drawable.mark_red))
 					.snippet("Your last known location"));
-		mMap.animateCamera(CameraUpdateFactory.newLatLng(lastLatLng), 3000, null);
+		mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(lastLatLng, 14), 1000, null);
 		
 		Log.d("LOCATION", gps.getLatitude()+","+gps.getLongitude());
 		
@@ -108,13 +119,10 @@ public class MainMapActivity extends Activity{
 							"location="+gps.getLatitude()+","+gps.getLongitude()+
 							"&radius="+searchRadius+
 							"&sensor=true"+
-							"&types="+"food|bar|store|museum|art_gallery"+
+							"&types="+searchType+
 							"&key="+API_KEY;
 		
-		Log.d("URL", searchURL);
-		
 		new GetPlaces().execute(searchURL);
-		
 	}
 	
 	public void updateSearchType(String type){
@@ -149,7 +157,6 @@ public class MainMapActivity extends Activity{
 					Log.d("ERROR HTTP_RESPONSE", "ERROR HTTP_RESPONSE");
 				}
 			}
-			Log.d("RESPONSE", placeBuilder.toString());
 			return placeBuilder.toString();
 		}
 		
@@ -176,11 +183,16 @@ public class MainMapActivity extends Activity{
 						missingValue = false ;
 						JSONObject placeObject = jArray.getJSONObject(j);
 						JSONObject placeLoc = placeObject.getJSONObject("geometry").getJSONObject("location");
-						
+
+						minLat  = (int) Math.min( placeLoc.getDouble("lat")*1E6, minLat );
+					    minLong = (int) Math.min( placeLoc.getDouble("lng")*1E6, minLong);
+					    maxLat  = (int) Math.max( placeLoc.getDouble("lat")*1E6, maxLat );
+					    maxLong = (int) Math.max( placeLoc.getDouble("lng")*1E6, maxLong );						
 						pLatLng = new LatLng(Double.valueOf(placeLoc.getString("lat")), 
 								Double.valueOf(placeLoc.getString("lng")));
 						pName = placeObject.getString("name");
 						pVicinity = placeObject.getString("vicinity");
+						Log.d("PLACE NAME:", pName);
 					}
 					catch(JSONException e){
 						Log.d("MISSING VALUES", "Values are missing");
@@ -199,12 +211,12 @@ public class MainMapActivity extends Activity{
 									.snippet(pVicinity);
 					}
 				}
+				
 			}
 			catch(Exception e){
 				Log.d("ERROR IN MAIN MAP CLASS", "Error occurred in parsing JSON + 2");
 				e.printStackTrace();
 			}
-			Log.d("L1, L2", places.length+" , "+placeMarker.length);
 			if(places!=null && placeMarker !=null){
 				for(int k=0;k<places.length && k<placeMarker.length;k++){
 					if(places[k]!=null){
