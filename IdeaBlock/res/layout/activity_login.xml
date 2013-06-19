@@ -4,41 +4,38 @@
     android:background="@drawable/backdrop"
     android:gravity="center"
     android:orientation="vertical" >
-	
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/loginTitle" />
-    
-	<EditText
-    android:id="@+id/loginUsername"
-    android:layout_height="wrap_content"
-	android:layout_width="250dp"
-    android:inputType="text"
-    android:singleLine="true"
-    android:layout_gravity="center"
-    android:gravity="center_vertical"
-    android:hint="@string/loginUsername"/>
-    
+
     <EditText
-    android:id="@+id/loginPassword"
-    android:layout_height="wrap_content"
-    android:layout_width="250dp"
-    android:inputType="textPassword"
-    android:singleLine="true"
-    android:layout_gravity="center"
-    android:hint="@string/loginPassword"/>
-    
-	<Button
-    android:id="@+id/loginbutton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"    
-    android:text="@string/loginButton"
-        />
- 
-  
+        android:id="@+id/loginUsername"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:hint="@string/loginUsername"
+        android:inputType="textWebEmailAddress"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/loginPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="@string/loginPassword"
+        android:inputType="textPassword"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/loginButton" />
 
     <TextView
         android:id="@+id/loginForgotEmail"
@@ -51,14 +48,14 @@
         android:selectAllOnFocus="true"
         android:text="@string/loginForgotEmail" />
 
-     <TextView
-         android:id="@+id/loginForgotPassword"
-         android:layout_width="fill_parent"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:clickable="true"
-         android:gravity="center_horizontal"
-         android:linksClickable="true"
-         android:text="@string/loginForgotPassword" />
-    
+    <TextView
+        android:id="@+id/loginForgotPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:linksClickable="true"
+        android:text="@string/loginForgotPassword" />
+
 </LinearLayout>

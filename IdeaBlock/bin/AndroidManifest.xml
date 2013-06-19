@@ -10,7 +10,7 @@
 
     <uses-sdk
         android:minSdkVersion="11"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="17" />
 
     <!-- User Permissions -->
     <permission
@@ -50,49 +50,53 @@
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Home"
-            android:label="@string/title_activity_home" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Login"
-            android:label="@string/title_activity_login" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.SendMoney"
-            android:label="@string/title_activity_send_money" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_send_money"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.RequestMoney"
-            android:label="@string/title_activity_request_money" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_request_money"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.DepositMoney"
-            android:label="@string/title_activity_deposite_money" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_deposite_money"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Transactions"
-            android:label="@string/title_activity_transactions" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_transactions"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Contacts"
             android:label="@string/title_activity_contacts"
-            android:windowSoftInputMode="stateHidden" 
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Notes"
-            android:label="@string/title_activity_notes" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_notes"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Map"
-            android:label="@string/title_activity_map" 
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_map"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="patidar.sagar.ideablock.Details"
+            android:label="@string/title_activity_details" >
         </activity>
     </application>
 

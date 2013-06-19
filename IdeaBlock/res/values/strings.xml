@@ -28,6 +28,7 @@
     <string name="title_activity_transactions">Transactions</string>
     <string name="title_activity_contacts">Contacts</string>
     <string name="title_activity_notes">My Notes</string>
+
     <string-array name="deposite_array_bank_name">
         <item>SBI</item>
         <item>ICICI Bank</item>
@@ -79,6 +80,6 @@
         <item>2032</item>
     </string-array>
 
-
+    <string name="title_activity_details">Details</string>
 
 </resources>

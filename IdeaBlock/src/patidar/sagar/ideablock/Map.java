@@ -68,6 +68,10 @@ public class Map extends Activity{
 		this.edit_search = (EditText) findViewById(R.id.map_edit_search);
 		this.button_search = (Button) findViewById(R.id.map_button_go);
 		
+		Constants.setButtonFontStyle(getAssets(), this.button_search);
+		Constants.setEditTextFontStyle(getAssets(), this.edit_search);
+		Constants.setTextViewFontStyle(getAssets(), this.text_title);
+		
 		button_search.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -82,7 +86,8 @@ public class Map extends Activity{
 		if(mMap==null){	
 			mMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
 			if(mMap!=null){ // to check in case Google Play Services is Not Avaiable
-				placeMarker = new Marker[MAX_PLACES];
+				placeMarker = new
+						Marker[MAX_PLACES];
 				mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 				updatePlaces();
 			}
@@ -192,7 +197,6 @@ public class Map extends Activity{
 								Double.valueOf(placeLoc.getString("lng")));
 						pName = placeObject.getString("name");
 						pVicinity = placeObject.getString("vicinity");
-						Log.d("PLACE NAME:", pName);
 					}
 					catch(JSONException e){
 						Log.d("MISSING VALUES", "Values are missing");

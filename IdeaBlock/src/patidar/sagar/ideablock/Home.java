@@ -20,11 +20,11 @@ public class Home extends Activity {
 	ImageView merchants ;
 	ImageView myNotes ;
 	ImageView aroundMe ;
-	
+
 	private TextView text_name;
 	private TextView text_id;
 	private TextView text_money;
-	
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +44,14 @@ public class Home extends Activity {
 		this.text_id = (TextView) findViewById(R.id.userID);
 		this.text_name = (TextView) findViewById(R.id.username);
 		this.text_money = (TextView) findViewById(R.id.balanceAmount);
-		
+
 		Constants.setTextViewFontStyle(getAssets(), this.text_id,this.text_money,this.text_name);
-		
+
 		Intent i = getIntent();
 		text_name.setText(i.getStringExtra("user_name"));
 		text_id.setText(i.getStringExtra("user_id"));
 		text_money.setText("Rs. "+i.getStringExtra("user_balance"));
-		
+
 		sendMoney.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -78,28 +78,28 @@ public class Home extends Activity {
 				startActivity(new Intent(Home.this, RequestMoney.class));
 			}
 		});
-		
+
 		transactions.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Home.this,Transactions.class);
 				startActivity(intent);
-				
+
 			}
 		});
-		
+
 		contacts.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Home.this,Contacts.class);
 				startActivity(intent);
 			}
 		});
-		
+
 		myNotes.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -108,6 +108,15 @@ public class Home extends Activity {
 			}
 		});
 
+		aroundMe.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(Home.this,Map.class);
+				startActivity(intent);
+			}
+		});
 
 	}
 
