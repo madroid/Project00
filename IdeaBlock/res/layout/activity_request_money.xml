@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ScrollView3"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".requestMoney" >
-
-
-<LinearLayout 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backdrop"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
+    tools:context=".requestMoney" >
 
     <ImageView
         android:id="@+id/image_requestMoney_header"
@@ -27,54 +23,74 @@
         android:id="@+id/request_text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Request Money"
         android:layout_marginBottom="35dp"
+        android:text="Request Money"
         android:textColor="@android:color/black"
         android:textSize="12sp" />
 
     <EditText
         android:id="@+id/request_receiverID"
-        android:layout_width="250dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:ellipsize="middle"
-        android:hint="Sender's ID/E-mail /Ph. no."
-        android:singleLine="true" />
-    
-        <EditText
-        android:id="@+id/request_amount"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ellipsize="middle"
-        android:hint="Requested Amount"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="Sender&apos;s ID/E-mail /Ph. no."
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
 
-	<EditText
-        android:id="@+id/request_pin"
-        android:layout_width="250dp"
+    <EditText
+        android:id="@+id/request_amount"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:inputType="textPassword"
-        android:ellipsize="middle"
-        android:hint="PIN"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="Requested Amount"
+        android:inputType="number"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
-	
+
+    <EditText
+        android:id="@+id/request_pin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="PIN"
+        android:inputType="numberPassword"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
+
     <EditText
         android:id="@+id/request_comment"
-        android:layout_width="250dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:ellipsize="middle"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
         android:hint="Comments!"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
-    
-    <Button android:id="@+id/request_button"
+
+    <Button
+        android:id="@+id/request_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Request"
-        />
-    
+        android:background="@drawable/shape_edittext_final"
+        android:text="Request" />
+
 </LinearLayout>
-</ScrollView>

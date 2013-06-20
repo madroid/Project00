@@ -75,6 +75,7 @@ public class SearchContactsAdapter extends ArrayAdapter<HashMap<String, String>>
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(contxt,RequestMoney.class);
 				intent.putExtra("id", item.get("id"));
+				intent.putExtra("check", true);
 				contxt.startActivity(intent);
 			}
 		});
@@ -86,6 +87,7 @@ public class SearchContactsAdapter extends ArrayAdapter<HashMap<String, String>>
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(contxt,SendMoney.class);
 				intent.putExtra("id", item.get("id"));
+				intent.putExtra("check", true);
 				contxt.startActivity(intent);
 			}
 		});

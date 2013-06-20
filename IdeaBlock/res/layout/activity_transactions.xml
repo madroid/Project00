@@ -3,8 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
-    android:paddingTop="20dp"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
+    android:paddingTop="20dp" >
 
     <TextView
         android:id="@+id/trans_title"
@@ -16,64 +18,69 @@
         android:text="@string/title_activity_transactions"
         android:textSize="20sp" />
 
-        <LinearLayout
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="17dp" 
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/trans_text_month"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
             android:layout_marginRight="3dp"
-            android:textSize="15sp"
+            android:layout_weight="2"
             android:gravity="end"
-            android:text="Month"/>
+            android:text="Month"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/trans_text_year"
             android:layout_width="0dp"
-            android:layout_weight="2"
-            android:textSize="15sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp" 
+            android:layout_marginLeft="2dp"
+            android:layout_weight="2"
             android:gravity="start"
-            android:text="Year"/>
-        
-        
+            android:text="Year"
+            android:textSize="15sp" />
     </LinearLayout>
-    
-    
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
         android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_marginBottom="20dp">
+        android:paddingRight="5dp" >
 
         <Spinner
             android:id="@+id/trans_spinner_month"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="2"
+            android:background="@drawable/shape_edittext_final_left"
             android:entries="@array/trans_month_name"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
             android:prompt="@string/trans_month_prompt" />
 
         <Spinner
             android:id="@+id/trans_spinner_year"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:layout_marginRight="3dp" 
+            android:layout_marginLeft="2dp"
+            android:layout_weight="2"
+            android:background="@drawable/shape_edittext_final_right"
             android:entries="@array/trans_year"
-            android:prompt="@string/trans_year_prompt"/>
-        
-        
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:prompt="@string/trans_year_prompt" />
     </LinearLayout>
 
     <ListView

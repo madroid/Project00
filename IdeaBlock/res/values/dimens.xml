@@ -12,4 +12,15 @@
 	
 	
 	<!-- Some font sizes -->
+	
+	<!-- Edit text box properties -->
+	<dimen name="shape_edittext_corner_radius">5dp</dimen>
+	<dimen name="shape_edittext_corner_radius_zero">0dp</dimen>
+	<dimen name="shape_edittext_padding_left_right">10dp</dimen>
+	<dimen name="shape_edittext_padding_top_bottom">7dp</dimen>
+	<dimen name="shape_edittext_intra_distance">15dp</dimen>
+	
+	
+	<!-- Application dimensions -->
+	<dimen name="app_padding_left_right">30dp</dimen>
 </resources>

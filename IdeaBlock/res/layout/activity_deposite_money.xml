@@ -1,117 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ScrollView3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backdrop"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
     tools:context=".requestMoney" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/image_depositeMoney_header"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:layout_marginTop="38dp" >
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:src="@drawable/profilepicture" />
 
-        <ImageView
-            android:id="@+id/image_depositeMoney_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="30dp"
-            android:clickable="true"
-            android:src="@drawable/profilepicture" />
+    <TextView
+        android:id="@+id/deposite_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:text="Deposite Money"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/deposite_text_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp"
-            android:text="Deposite Money"
-            android:textColor="@android:color/black"
-            android:textSize="12sp" />
+    <EditText
+        android:id="@+id/deposite_amount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="Amount to deposit"
+        android:inputType="number"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
 
-        <EditText
-            android:id="@+id/deposite_amount"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ellipsize="middle"
-            android:hint="Amount to deposit"
-            android:singleLine="true" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal" >
-
-            <EditText
-                android:id="@+id/deposite_accountNo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:ellipsize="middle"
-                android:hint="Account No."
-                android:singleLine="true" />
-
-            <Spinner
-                android:id="@+id/deposite_spinner_bank_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:entries="@array/deposite_array_bank_name"
-                android:prompt="@string/deposite_bank_prompt" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal" >
-
-            <EditText
-                android:id="@+id/deposite_password"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:ellipsize="middle"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/deposite_pin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:ellipsize="middle"
-                android:hint="PIN"
-                android:inputType="textPassword"
-                android:singleLine="true" />
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:orientation="horizontal" >
 
         <EditText
-            android:id="@+id/deposite_comment"
-            android:layout_width="fill_parent"
+            android:id="@+id/deposite_accountNo"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ellipsize="middle"
-            android:hint="ID: 9899637620 (self)"
+            android:layout_marginRight="2dp"
+            android:layout_weight="2"
+            android:background="@drawable/shape_edittext_final_left"
+            android:hint="Account No."
+            android:inputType="number"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
             android:singleLine="true" />
 
-        <Button
-            android:id="@+id/deposite_button"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/deposite_spinner_bank_name"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Deposite" />
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edittext_final_right"
+            android:entries="@array/deposite_array_bank_name"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:prompt="@string/deposite_bank_prompt" />
     </LinearLayout>
 
-</ScrollView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/deposite_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_weight="2"
+            android:background="@drawable/shape_edittext_final_left"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/deposite_pin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edittext_final_right"
+            android:hint="PIN"
+            android:inputType="numberPassword"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/deposite_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:ellipsize="middle"
+        android:hint="ID: 9899637620 (self)"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/deposite_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deposite" />
+
+</LinearLayout>

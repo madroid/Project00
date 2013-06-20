@@ -69,7 +69,7 @@ public class Details extends Activity {
 					text_content.setText(prevItem.get("message"));
 				}
 				else{
-					Toast.makeText(Details.this, "No more note on the left side", Toast.LENGTH_LONG).show();
+					Toast.makeText(Details.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -89,7 +89,7 @@ public class Details extends Activity {
 					text_content.setText(nextItem.get("message"));
 				}
 				else{
-					Toast.makeText(Details.this, "No more note on the right side", Toast.LENGTH_LONG).show();
+					Toast.makeText(Details.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});		

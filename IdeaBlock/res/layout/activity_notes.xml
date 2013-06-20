@@ -3,35 +3,41 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
-    android:orientation="vertical" 
-    android:paddingTop="10dp">
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
+    android:paddingTop="10dp" >
 
-    
-    <TextView 
+    <TextView
         android:id="@+id/note_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/title_activity_notes"
-        android:gravity="center"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
-    
-    <TextView 
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:text="@string/title_activity_notes"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/note_create"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:text="Create New"/>
-    
-	<EditText 
-	    android:id="@+id/notes_text_new"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:hint=""/>
+        android:text="Create New"
+        android:textSize="15sp" />
 
+    <EditText
+        android:id="@+id/notes_edit_new"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="Tap here to add"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom" />
 
     <ListView
         android:id="@+id/notes_list"

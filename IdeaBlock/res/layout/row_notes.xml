@@ -4,14 +4,12 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingBottom="5dp"
-    android:paddingLeft="15dip"
     android:paddingTop="5dp" >
 
     <TextView
         android:id="@+id/notes_subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        
         android:layout_alignParentLeft="true"
         android:singleLine="true"
         android:text="Subject"
@@ -29,13 +27,13 @@
         android:textColor="#040404"
         android:textSize="12sp"
         android:typeface="sans" />
-    
-    <ImageButton 
+
+    <ImageButton
         android:id="@+id/notes_button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/arrow"/>
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow" />
 
 </RelativeLayout>

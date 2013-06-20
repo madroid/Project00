@@ -1,72 +1,88 @@
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical"
-android:background="@drawable/backdrop"
-android:layout_width="fill_parent"
-android:layout_height="fill_parent">
-	
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backdrop"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right" >
+
     <TextView
         android:id="@+id/main_text_title"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:textSize="20sp"
-	android:gravity="center"
-	android:layout_marginTop="10dp"
-	android:layout_marginBottom="25dp"
-	
-	android:text="@string/main_title" />
-    
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/main_title"
+        android:textSize="20sp" />
+
     <EditText
-    android:id="@+id/inputName"
-    android:layout_height="wrap_content"
-    android:layout_width="250dp"
-    android:singleLine="true"
-    android:ellipsize="middle"
-    android:layout_gravity="center"
-    android:hint="@string/name"/>
-    
+        android:id="@+id/inputName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="@string/name"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
+
     <EditText
-    android:id="@+id/inputMobileNumber"
-    android:layout_height="wrap_content"
-    android:layout_width="250dp"
-    android:inputType="number"
-    android:singleLine="true"
-    android:maxLength="10"
-    android:layout_gravity="center"
-    android:hint="@string/mobile"/>
-    
+        android:id="@+id/inputMobileNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="@string/mobile"
+        android:inputType="number"
+        android:maxLength="10"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
+
     <EditText
-    android:id="@+id/inputEmailID"
-    android:layout_height="wrap_content"
-	android:layout_width="250dp"
-    android:inputType="textEmailAddress"
-    android:singleLine="true"
-    android:layout_gravity="center"
-    android:hint="@string/email"/>
-    
+        android:id="@+id/inputEmailID"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
+
     <EditText
-    android:id="@+id/inputPassword"
-    android:layout_height="wrap_content"
-    android:layout_width="250dp"
-    android:inputType="textPassword"
-    android:singleLine="true"
-    android:layout_gravity="center"
-    android:hint="@string/password"/>
-    
+        android:id="@+id/inputPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
+
     <Button
-    android:id="@+id/buttonSignUp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"    
-    android:text="@string/signUpButton"
-        />
-    
- 	<Button
-    android:id="@+id/buttonSingIn"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"    
-    android:text="Sign In"
-        />
-    
+        android:id="@+id/buttonSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signUpButton" />
+
+    <Button
+        android:id="@+id/buttonSingIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In" />
+
 </LinearLayout>

@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ScrollView2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
-    tools:context=".SendMoney" >
-
-
-<LinearLayout 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
+    tools:context=".SendMoney" >
 
     <ImageView
         android:id="@+id/image_sendMoney_header"
@@ -27,55 +23,77 @@
         android:id="@+id/send_text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image_sendMoney_header"
-        android:text="Send Money"
         android:layout_marginBottom="35dp"
+        android:text="Send Money"
         android:textColor="@android:color/black"
         android:textSize="12sp" />
 
     <EditText
         android:id="@+id/send_receiverID"
-        android:layout_width="250dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
         android:ellipsize="middle"
-        android:hint="Receiver's ID/E-mail /Ph. no."
-        android:singleLine="true" />
-    
-        <EditText
-        android:id="@+id/send_amount"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ellipsize="middle"
-        android:hint="Amount to send"
+        android:hint="Receiver&apos;s ID/E-mail /Ph. no."
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
 
-	<EditText
-        android:id="@+id/send_pin"
-        android:layout_width="250dp"
+    <EditText
+        android:id="@+id/send_amount"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:inputType="textPassword"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
+        android:ellipsize="middle"
+        android:hint="Amount to send"
+        android:inputType="number"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/send_pin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
         android:ellipsize="middle"
         android:hint="PIN"
+        android:inputType="numberPassword"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
-	
+
     <EditText
         android:id="@+id/send_comment"
-        android:layout_width="250dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
         android:ellipsize="middle"
         android:hint="Comments!"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
-    
-    <Button android:id="@+id/send_button"
+
+    <Button
+        android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Send"
-        />
-    
+        android:text="Send" />
+
 </LinearLayout>
-</ScrollView>

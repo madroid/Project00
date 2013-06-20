@@ -77,7 +77,7 @@ public class TransactionDetails extends Activity {
 					text_name.setText("Name : (Sender's/Receiver's name)");
 				}
 				else{
-					Toast.makeText(TransactionDetails.this, "No more note on the left side", Toast.LENGTH_LONG).show();
+					Toast.makeText(TransactionDetails.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -97,7 +97,7 @@ public class TransactionDetails extends Activity {
 					text_net_amount.setText("Net Amount : "+nextItem.get(Transactions.PAYMENT_AMOUNT));
 					text_name.setText("Name : (Sender's/Receiver's name)");				}
 				else{
-					Toast.makeText(TransactionDetails.this, "No more note on the right side", Toast.LENGTH_LONG).show();
+					Toast.makeText(TransactionDetails.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});		

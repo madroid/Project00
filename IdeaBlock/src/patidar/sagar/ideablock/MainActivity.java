@@ -30,8 +30,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 public class MainActivity extends Activity {
 
 	EditText inputName;
@@ -84,7 +82,6 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
 				startActivity(new Intent(MainActivity.this,Login.class));
 			}
 		});

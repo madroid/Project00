@@ -105,8 +105,8 @@ public class Login extends Activity {
 
 		@Override
 		protected String doInBackground(String... params) {
-			String username = inputUsername.getText().toString();
-			String passwd = inputPassword.getText().toString();
+			String username = "9899637620"; //inputUsername.getText().toString();
+			String passwd = "1234" ;//inputPassword.getText().toString();
 			List<NameValuePair> param = new ArrayList<NameValuePair>();
 			param.add(new BasicNameValuePair("loginUsername", username));
 			param.add(new BasicNameValuePair("passwd", passwd));

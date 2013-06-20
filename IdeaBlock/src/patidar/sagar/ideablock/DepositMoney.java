@@ -16,7 +16,7 @@ public class DepositMoney extends Activity {
 	private EditText edit_account ;
 	private EditText edit_password;
 	private EditText edit_pin;
-	private EditText edit_comment ;
+	private EditText edit_id ;
 	private Button button_deposite ;
 	private Spinner spin ;
 	
@@ -29,13 +29,13 @@ public class DepositMoney extends Activity {
 		this.edit_account = (EditText) findViewById(R.id.deposite_accountNo);
 		this.edit_amount = (EditText) findViewById(R.id.deposite_amount);
 		this.edit_password = (EditText) findViewById(R.id.deposite_password);
-		this.edit_comment = (EditText) findViewById(R.id.deposite_comment);
+		this.edit_id = (EditText) findViewById(R.id.deposite_id);
 		this.edit_pin = (EditText) findViewById(R.id.deposite_pin);
 		this.button_deposite = (Button) findViewById(R.id.deposite_button);
 		this.spin = (Spinner) findViewById(R.id.deposite_spinner_bank_name);
 		
 		Constants.setButtonFontStyle(getAssets(), this.button_deposite);
-		Constants.setEditTextFontStyle(getAssets(), this.edit_account,this.edit_amount,this.edit_comment,this.edit_password,this.edit_pin);
+		Constants.setEditTextFontStyle(getAssets(), this.edit_account,this.edit_amount,this.edit_id,this.edit_password,this.edit_pin);
 		Constants.setTextViewFontStyle(getAssets(), this.text_title);
 		
 	}

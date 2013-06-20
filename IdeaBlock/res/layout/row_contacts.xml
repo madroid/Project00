@@ -3,20 +3,22 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="5dip" >
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp" >
 
    <LinearLayout android:id="@+id/contacts_default_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="3dip"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/image_bg"
         android:layout_marginRight="5dip">
  
         <ImageView
             android:id="@+id/contacts_default_pic2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/image_bg"
+            android:padding="3dp"
             android:src="@drawable/default_profile_pic"/>
 	    </LinearLayout>
     
@@ -28,9 +30,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="2dp"
         android:layout_toRightOf="@id/contacts_default_pic"
+        android:textSize="15sp"
         android:text="Name"
         android:textColor="#040404"
-        android:textSize="15sp"
         android:typeface="sans" />
 
     <TextView

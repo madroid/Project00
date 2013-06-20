@@ -57,7 +57,7 @@ public class Home extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				startActivity(new Intent(Home.this, SendMoney.class));
+				startActivity(new Intent(Home.this,SendMoney.class));
 			}
 		});
 

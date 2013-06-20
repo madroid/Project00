@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,7 +20,7 @@ public class Contacts extends Activity {
 	private TextView text_row_id;
 	
 	private EditText text_search ;
-	private ImageButton button_add_contact;
+	private Button button_add_contact;
 	
 	public static final String CONTACT_NAME = "name";
 	public static final String CONTACT_ID = "id";
@@ -37,7 +37,7 @@ public class Contacts extends Activity {
 		this.text_title = (TextView) findViewById(R.id.contacts_text_title);
 		text_search = (EditText) findViewById(R.id.contacts_edit_search);
 		
-		button_add_contact = (ImageButton) findViewById(R.id.contacts_button_add);
+		button_add_contact = (Button) findViewById(R.id.contacts_button_add);
 		listView = (ListView) findViewById(R.id.contacts_list);
 		
 		Constants.setEditTextFontStyle(getAssets(), this.text_search);

@@ -33,9 +33,10 @@ public class RequestMoney extends Activity {
 		Constants.setTextViewFontStyle(getAssets(), this.text_title);
 		
 		Intent intent = getIntent();
-		if(intent!=null){
+		boolean check  = intent.getBooleanExtra("check", false);
+		if(check){
 			edit_receiverID.setText(intent.getStringExtra("id"));
-			edit_amount.setHint("Amount to Request");
+			edit_amount.requestFocus();
 		}
 		
 	}

@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/backdrop"
     android:orientation="vertical"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
     android:paddingTop="20dp"
     tools:context=".Contacts" >
 
@@ -16,42 +18,45 @@
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
-    
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:gravity="center"
         android:orientation="horizontal" >
 
         <EditText
             android:id="@+id/contacts_edit_search"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:singleLine="true"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edittext_final"
             android:ems="10"
             android:hint="Search"
-             >
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" >
         </EditText>
-"
 
-        <ImageButton
+        <Button
             android:id="@+id/contacts_button_add"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/button_add_contact" />
+            android:layout_marginLeft="2dp"
+            android:text="Add" />
     </LinearLayout>
-    
-    <ListView 
+
+    <ListView
         android:id="@+id/contacts_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:divider="#b5b5b5"
-        android:dividerHeight="1dp"
-        >
+        android:dividerHeight="2dp"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true" >
     </ListView>
 
 </LinearLayout>

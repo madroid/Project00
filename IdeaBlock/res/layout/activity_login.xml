@@ -3,38 +3,42 @@
     android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
     android:gravity="center"
-    android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/loginTitle" />
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right" >
 
     <EditText
         android:id="@+id/loginUsername"
-        android:layout_width="250dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
         android:hint="@string/loginUsername"
         android:inputType="textWebEmailAddress"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
 
     <EditText
         android:id="@+id/loginPassword"
-        android:layout_width="250dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+        android:background="@drawable/shape_edittext_final"
         android:hint="@string/loginPassword"
         android:inputType="textPassword"
+        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+        android:paddingRight="@dimen/shape_edittext_padding_left_right"
+        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
         android:singleLine="true" />
 
     <Button
         android:id="@+id/loginbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="@string/loginButton" />
 
     <TextView
