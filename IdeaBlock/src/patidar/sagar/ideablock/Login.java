@@ -55,7 +55,8 @@ public class Login extends Activity {
 	public static ArrayList<HashMap<String, String>> arrlistTransactions = new ArrayList<HashMap<String,String>>();
 	public static ArrayList<HashMap<String, String>> arrlistNotes = new ArrayList<HashMap<String,String>>();
 
-
+	private ConnectionDetector checkInterentConnection ;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -71,12 +72,20 @@ public class Login extends Activity {
 		Constants.setButtonFontStyle(getAssets(), this.loginButton);
 		Constants.setEditTextFontStyle(getAssets(), inputPassword,inputUsername);
 
+		checkInterentConnection = new ConnectionDetector(this);
+		
 		loginButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				new signIn().execute();
+				if(checkInterentConnection.isConnectingToInternet()){
+					new signIn().execute();
+				}
+				else{
+					AlertDialogManager.showAlertDialog(Login.this, "Network Error!", 
+							"Please connect to a working internet.", true);
+				}
 			}
 		});
 
@@ -114,7 +123,7 @@ public class Login extends Activity {
 					ResponseHandler<String> responseHandler = new BasicResponseHandler();
 					final String httpResponse = httpClient.execute(httppost, responseHandler);
 
-					Log.d("OUTPUT", httpResponse);
+//					Log.d("OUTPUT", httpResponse);
 					jObj = new JSONObject(httpResponse);
 					success = jObj.getInt("success");
 					String message = jObj.getString("message");
@@ -167,7 +176,7 @@ public class Login extends Activity {
 											Timestamp time = new Timestamp(row.getInt("timestamp")); 
 											Date date = new Date(time.getTime());
 											int dt = date.getDate();
-											Log.d("Date", dt+" "+row.getString("month")+", "+row.getString("year"));
+//											Log.d("Date", dt+" "+row.getString("month")+", "+row.getString("year"));
 											hMap.put(Transactions.PAYMENT_AMOUNT, row.getString("amount"));
 											hMap.put(Transactions.PAYMENT_DATE, row.getString("date"));
 											hMap.put(Transactions.PAYMENT_TIME, row.getString("time"));

@@ -1,6 +1,7 @@
 package patidar.sagar.ideablock;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Button;
@@ -30,6 +31,12 @@ public class RequestMoney extends Activity {
 		Constants.setButtonFontStyle(getAssets(), this.button_request);
 		Constants.setEditTextFontStyle(getAssets(), this.edit_amount,this.edit_comment,this.edit_pin,this.edit_receiverID);
 		Constants.setTextViewFontStyle(getAssets(), this.text_title);
+		
+		Intent intent = getIntent();
+		if(intent!=null){
+			edit_receiverID.setText(intent.getStringExtra("id"));
+			edit_amount.setHint("Amount to Request");
+		}
 		
 	}
 

@@ -8,6 +8,7 @@ import com.google.android.gms.internal.m;
 import patidar.sagar.ideablock.SearchContactsAdapter.ViewHolder;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ public class TransactionAdapter extends ArrayAdapter<HashMap<String, String>> {
 
 	private LayoutInflater li ;
 	private int mResource ;
-	private List<HashMap<String, String>> data_list ;
+	public static List<HashMap<String, String>> data_list ;
 	private ArrayList<HashMap<String, String>> original_data_list;
 	private static Activity contxt ;
 	
@@ -73,6 +74,16 @@ public class TransactionAdapter extends ArrayAdapter<HashMap<String, String>> {
 		holder.transAmount2.setText(item.get("trans_amount2"));
 		holder.transID2.setText(item.get("trans_ID2"));
 		holder.transDate2.setText(item.get("trans_date2"));
+		final Intent intent = new Intent(contxt,TransactionDetails.class);
+		intent.putExtra("position", position);
+		holder.transDetails.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				contxt.startActivity(intent);
+			}
+		});
 		return convertView;
 	}
 	

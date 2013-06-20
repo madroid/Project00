@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backdrop"
+    android:orientation="vertical"
+    tools:context=".Details" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+		android:paddingBottom="@dimen/activity_details_padding_bottom"
+        android:paddingTop="@dimen/activity_details_padding_top" 
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/trans_details_button_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/button_left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/trans_details_relative_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp" >
+
+                <TextView
+                    android:id="@+id/trans_details_text_date_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="dd-mm-yyyy"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/trans_details_text_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/trans_details_text_date_value"
+                    android:text="Date : "
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/trans_details_text_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignStart="@id/trans_details_text_date_value"
+                    android:layout_below="@id/trans_details_text_date_value"
+                    android:text="hh:mm  AM"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/trans_details_text_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/trans_details_text_date"
+                    android:layout_below="@id/trans_details_text_date"
+                    android:layout_toLeftOf="@id/trans_details_text_time_value"
+                    android:text="Time : "
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_linear_layout_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bg_rect_details"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/trans_details_text_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name :"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/trans_details_text_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID:"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_linear_layout_2"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_details"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/trans_details_text_invoice"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INVOICE" 
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="14sp"/>
+                
+                <TextView
+                    android:id="@+id/trans_details_text_amount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:text="Net Amount : (amount)" 
+                    android:textSize="14sp"/>
+                
+                <TextView
+                    android:id="@+id/trans_details_text_more_details"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="(details)" 
+                    android:textSize="14sp"/>
+                
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/trans_details_button_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/button_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bottom_panel" />
+
+</LinearLayout>

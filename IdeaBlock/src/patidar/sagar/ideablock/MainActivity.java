@@ -54,13 +54,12 @@ public class MainActivity extends Activity {
 	ProgressDialog pDialog ;
 	//JSONObject jsonParser = new JSONParser();
 
-
+	private ConnectionDetector checkInterentConnection ;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 
 		//Text box inputs
 		inputName = (EditText) findViewById(R.id.inputName);
@@ -79,12 +78,13 @@ public class MainActivity extends Activity {
 		Constants.setEditTextFontStyle(getAssets(), this.inputEmailID,this.inputMobileNumber,this.inputName,this.inputPassword);
 		Constants.setTextViewFontStyle(getAssets(), title);
 
-
+		checkInterentConnection = new ConnectionDetector(MainActivity.this);
 		buttonSingIn.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				
 				startActivity(new Intent(MainActivity.this,Login.class));
 			}
 		});
@@ -94,7 +94,13 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				new registerUser().execute();
+				if(checkInterentConnection.isConnectingToInternet()){
+					new registerUser().execute();
+				}
+				else{
+					AlertDialogManager.showAlertDialog(MainActivity.this, "Network Error!", 
+							"Please connect to a working internet.", true);
+				}
 			}
 		});
 

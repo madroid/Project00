@@ -43,6 +43,9 @@ public class Transactions extends Activity {
 		text_month = (TextView) findViewById(R.id.trans_text_month);
 		text_year = (TextView) findViewById(R.id.trans_text_year);
 		
+		if(Login.arrlistTransactions.size()>0){
+		}
+		
 		Constants.setTextViewFontStyle(getAssets(), this.text_title,this.text_month,this.text_year);
 	
 		adapter = new TransactionAdapter(Transactions.this, R.layout.row_transaction, Login.arrlistTransactions);
@@ -85,6 +88,8 @@ public class Transactions extends Activity {
 			
 		});
 
+//		adapter = new TransactionAdapter(Transactions.this, R.layout.row_transaction, Login.arrlistTransactions);
+		
 		monthBool = true;
 		yearBool = true ;
 	}

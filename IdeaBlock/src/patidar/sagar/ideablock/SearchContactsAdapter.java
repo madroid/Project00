@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,9 +64,32 @@ public class SearchContactsAdapter extends ArrayAdapter<HashMap<String, String>>
 		else{
 			holder = (ViewHolder) convertView.getTag();
 		}
-		HashMap<String, String> item = getItem(position);
+		final HashMap<String, String> item = getItem(position);
 		holder.contacts_id.setText(item.get("id"));
 		holder.contacts_name.setText(item.get("name"));
+		
+		holder.contacts_button_request.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(contxt,RequestMoney.class);
+				intent.putExtra("id", item.get("id"));
+				contxt.startActivity(intent);
+			}
+		});
+		
+		holder.contacts_button_send.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(contxt,SendMoney.class);
+				intent.putExtra("id", item.get("id"));
+				contxt.startActivity(intent);
+			}
+		});
+		
 		return convertView;
 	}
 	

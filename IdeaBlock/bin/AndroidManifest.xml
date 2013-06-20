@@ -98,6 +98,10 @@
             android:name="patidar.sagar.ideablock.Details"
             android:label="@string/title_activity_details" >
         </activity>
+        <activity
+            android:name="patidar.sagar.ideablock.TransactionDetails"
+            android:label="@string/title_activity_transaction_details" >
+        </activity>
     </application>
 
 </manifest>
