@@ -13,6 +13,16 @@
 	
 	<!-- Some font sizes -->
 	
+	
+	<!-- Common dimensions for title and that background container  -->
+	<dimen name="common_title_padding_top_bottom">20dp</dimen>
+	<dimen name="common_box_padding_top_bottom_send_money">16dp</dimen>
+	<dimen name="common_box_padding_top_bottom_contacts">16dp</dimen>
+	<dimen name="common_box_margin_top_send_request_deposit">60dp</dimen>
+	
+	<!-- Send Money Dimenstions -->
+	
+	
 	<!-- Edit text box properties -->
 	<dimen name="shape_edittext_corner_radius">5dp</dimen>
 	<dimen name="shape_edittext_corner_radius_zero">0dp</dimen>
@@ -23,4 +33,5 @@
 	
 	<!-- Application dimensions -->
 	<dimen name="app_padding_left_right">30dp</dimen>
+	<dimen name="app_profile_border_width">5dp</dimen>
 </resources>

@@ -4,10 +4,8 @@
     <item>
         <shape android:shape="rectangle" >
             <stroke
-                android:width="2dp"
-                android:color="#dbdbdc" />
-
-            <solid android:color="#FFFFFF" />
+                android:width="@dimen/app_profile_border_width"
+                android:color="@color/profile_image_border_color" />
 
             <corners
                 android:bottomLeftRadius="@dimen/shape_edittext_corner_radius"

@@ -45,7 +45,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:divider="#b5b5b5"
-        android:dividerHeight="1dp"
-        android:listSelector="@drawable/list_selector" />
+        android:dividerHeight="1dp" />
 
 </LinearLayout>

@@ -140,10 +140,12 @@ public class Login extends Activity {
 						intent.putExtra("user_id", user_detail.getString("user_id"));
 						intent.putExtra("user_balance", user_detail.getString("user_balance"));
 
+						
+						
 						runOnUiThread(new Runnable() {
 							public void run() {
 								try {
-
+									Login.arrlistContacts.clear();
 									JSONArray arr = contacts.getJSONArray("contacts");
 									int length = arr.length();
 									if(length>0){
@@ -166,7 +168,7 @@ public class Login extends Activity {
 						runOnUiThread(new Runnable() {
 							public void run() {
 								try {
-
+									Login.arrlistTransactions.clear();
 									JSONArray transactions = trans_detail.getJSONArray("trans");
 									int length = transactions.length();
 									if(length>0){
@@ -205,7 +207,7 @@ public class Login extends Activity {
 						runOnUiThread(new Runnable() {
 							public void run() {
 								try {
-
+									Login.arrlistNotes.clear();
 									JSONArray notes = notes_detail.getJSONArray("notes");
 									int length = notes.length();
 									if(length>0){

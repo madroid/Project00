@@ -14,8 +14,7 @@
         android:singleLine="true"
         android:text="Subject"
         android:textColor="#040404"
-        android:textSize="15sp"
-        android:typeface="sans" />
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/notes_message"
@@ -25,8 +24,7 @@
         android:singleLine="true"
         android:text="Message"
         android:textColor="#040404"
-        android:textSize="12sp"
-        android:typeface="sans" />
+        android:textSize="12sp" />
 
     <ImageButton
         android:id="@+id/notes_button_view"

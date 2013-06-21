@@ -17,7 +17,7 @@
         android:layout_marginBottom="3dp"
         android:layout_marginTop="30dp"
         android:clickable="true"
-        android:src="@drawable/profilepicture" />
+        android:src="@drawable/send_money_title" />
 
     <TextView
         android:id="@+id/send_text_title"

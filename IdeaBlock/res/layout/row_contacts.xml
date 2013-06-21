@@ -6,22 +6,22 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp" >
 
-   <LinearLayout android:id="@+id/contacts_default_pic"
+   <FrameLayout android:id="@+id/contacts_default_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="3dip"
+        android:foreground="@drawable/frame"
         android:layout_alignParentLeft="true"
+        android:padding="@dimen/app_profile_border_width"
         android:layout_marginRight="5dip">
  
         <ImageView
             android:id="@+id/contacts_default_pic2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/image_bg"
-            android:padding="3dp"
             android:src="@drawable/default_profile_pic"/>
-	    </LinearLayout>
-    
+
+    </FrameLayout>     
+        
     <TextView
         android:id="@+id/row_contacts_name"
         android:layout_width="wrap_content"
@@ -31,9 +31,7 @@
         android:layout_marginRight="2dp"
         android:layout_toRightOf="@id/contacts_default_pic"
         android:textSize="15sp"
-        android:text="Name"
-        android:textColor="#040404"
-        android:typeface="sans" />
+        android:text="Name"/>
 
     <TextView
         android:id="@+id/row_contacts_id"
@@ -44,9 +42,7 @@
         android:layout_marginRight="2dp"
         android:layout_toRightOf="@id/contacts_default_pic"
         android:text="ID"
-        android:textColor="#040404"
-        android:textSize="15sp"
-        android:typeface="sans" />
+        android:textSize="15sp"/>
 
     
     <ImageView

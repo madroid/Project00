@@ -26,7 +26,7 @@ public class SendMoney extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_money);
 		
-		this.text_title = (TextView) findViewById(R.id.send_text_title);
+		//this.text_title = (TextView) findViewById(R.id.send_text_title);
 		this.edit_amount = (EditText) findViewById(R.id.send_amount);
 		this.edit_comment = (EditText) findViewById(R.id.send_comment);
 		this.edit_pin = (EditText) findViewById(R.id.send_pin);

@@ -2,4 +2,6 @@
 <resources>
     <color name="shape_edittext_background_color">#FFFFFF</color>
     <color name="shape_edittext_border_color">#FF9933</color>
+    
+    <color name="profile_image_border_color">#333366</color>
 </resources>
