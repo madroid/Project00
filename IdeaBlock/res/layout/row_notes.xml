@@ -1,37 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingBottom="5dp"
-    android:paddingTop="5dp" >
+    android:paddingBottom="@dimen/row_padding_top_bottom"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
+    android:paddingTop="@dimen/row_padding_top_bottom" 
+    android:gravity="center">
 
-    <TextView
-        android:id="@+id/notes_subject"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:singleLine="true"
-        android:text="Subject"
-        android:textColor="#040404"
-        android:textSize="15sp"/>
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginRight="2dp" >
 
-    <TextView
-        android:id="@+id/notes_message"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/notes_subject"
-        android:singleLine="true"
-        android:text="Message"
-        android:textColor="#040404"
-        android:textSize="12sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/row_transaction_intra_distance"
+            android:orientation="horizontal" >
 
-    <ImageButton
+            <TextView
+                android:id="@+id/notes_subject_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subject : "
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textSize="@dimen/row_note_text_size_subject" />
+
+            <TextView
+                android:id="@+id/notes_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subject here"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textSize="@dimen/row_note_text_size_subject" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/notes_message_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message : "
+                android:singleLine="true"
+                android:textSize="@dimen/row_note_text_size_content" />
+
+            <TextView
+                android:id="@+id/notes_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message Here"
+                android:singleLine="true"
+                android:textSize="@dimen/row_note_text_size_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <ImageView
         android:id="@+id/notes_button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/arrow" />
+        android:layout_marginLeft="2dp"
+        android:src="@drawable/button_details" />
 
-</RelativeLayout>
+</LinearLayout>

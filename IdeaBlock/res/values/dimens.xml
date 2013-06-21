@@ -21,6 +21,7 @@
 	<dimen name="common_box_margin_top_send_request_deposit">167dp</dimen>
 	<dimen name="common_element_padding_top_send_request_deposit">20dp</dimen>
 	<dimen name="common_divider_height">2dp</dimen>
+	<dimen name="common_box_height">107dp</dimen>
 	<!-- Send Money Dimenstions -->
 	
 	
@@ -48,5 +49,17 @@
 	<dimen name="row_transaction_text_id_size">15sp</dimen>
 	<dimen name="row_transaction_text_other_size">15sp</dimen>
 	<dimen name="row_transaction_text_spinner_intra_distance">8dp</dimen>
+	
+	<!-- row notes dimensions -->
+	<dimen name="row_note_text_size_subject">15sp</dimen>
+	<dimen name="row_note_text_size_content">15sp</dimen>
+	
+	<!-- Home screen dimensions -->
+	<dimen name="home_user_name_balance_font_size">17sp</dimen>
+	<dimen name="home_user_id_font_size">15sp</dimen>
+	<dimen name="home_logo_bar_height">70dp</dimen>
+	<dimen name="home_user_name_padding_left_right">15dp</dimen>
+	
+	
 	
 </resources>

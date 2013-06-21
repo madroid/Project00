@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -36,14 +37,19 @@ public class NotesAdapter extends ArrayAdapter<HashMap<String, String>>{
 	public static class ViewHolder {
 		private TextView notes_subject ;
 		private TextView notes_message ;
-		private ImageButton notes_arrow ;
+		private TextView notes_subject_name ;
+		private TextView notes_message_name ;
+		private ImageView notes_arrow ;
 
 
 		public ViewHolder(View v){
 			notes_subject = (TextView) v.findViewById(R.id.notes_subject);
 			notes_message = (TextView) v.findViewById(R.id.notes_message);
-			notes_arrow = (ImageButton) v.findViewById(R.id.notes_button_view);
-			Constants.setTextViewFontStyle(cntxt.getAssets(),this.notes_message,this.notes_subject);
+			notes_subject_name = (TextView) v.findViewById(R.id.notes_subject_name);
+			notes_message_name = (TextView) v.findViewById(R.id.notes_message_name);
+			notes_arrow = (ImageView) v.findViewById(R.id.notes_button_view);
+			Constants.setTextViewFontStyle(cntxt.getAssets(),this.notes_message,this.notes_subject,
+					this.notes_message_name,this.notes_subject_name);
 		}
 		
 		

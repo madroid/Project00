@@ -4,66 +4,73 @@
     android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
     android:orientation="vertical"
-    android:paddingTop="30dp" >
+    android:paddingTop="@dimen/home_logo_bar_height" >
 
     <!-- 0. First Child of linear layout: header: profile picture, name, money, id -->
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="65dp" >
+        android:layout_height="@dimen/common_box_height"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right" >
 
-        <FrameLayout 
+        <FrameLayout
             android:id="@+id/image_profilePic_bound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/app_profile_border_width"
-            android:foreground="@drawable/frame">
-        
-        <ImageView
-            android:id="@+id/image_profilePic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/image_bg"
-            android:src="@drawable/profilepicture" />
+            android:foreground="@drawable/frame"
+            android:padding="@dimen/app_profile_border_width" >
 
+            <ImageView
+                android:id="@+id/image_profilePic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_bg"
+                android:src="@drawable/profilepicture" />
         </FrameLayout>
-        
-        <TextView
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@id/image_profilePic_bound"
-            android:text="Sagar Patidar"
-            android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/userID"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/username"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/image_profilePic_bound"
-            android:text="ID: 9899637620"
-            android:textSize="12sp" />
+            android:layout_weight="1"
+            android:paddingRight="@dimen/home_user_name_padding_left_right"
+            android:paddingLeft="@dimen/home_user_name_padding_left_right"
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/balanceAmount"
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User&apos;s Name"
+                android:textColor="@color/user_name_id_color"
+                android:textSize="@dimen/home_user_name_balance_font_size" />
+
+            <TextView
+                android:id="@+id/userID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User&apos;s 10 digit ID"
+                android:textColor="@color/user_name_id_color"
+                android:textSize="@dimen/home_user_id_font_size" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/image_profilePic_bound"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="30dp"
-            android:gravity="center"
-            android:text="Rs. 10,98,263" />
-    </RelativeLayout>
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/balanceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="Rs. 10,98,263"
+                android:textColor="@color/user_balance"
+                android:textSize="@dimen/home_user_name_balance_font_size" />
+        </LinearLayout>
+    </LinearLayout>
 
     <!-- 00. First Child of linear layout: header: profile picture, name, money, id -->
 
@@ -78,6 +85,7 @@
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/shape_edittext_intra_distance"
             android:shrinkColumns="*"
             android:stretchColumns="*" >
 

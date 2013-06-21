@@ -6,4 +6,8 @@
     <color name="profile_image_border_color">#333366</color>
     <color name="divider_color">#b5b5b5</color>
     
+    <!-- Home screen colors -->
+    <color name="user_name_id_color">#000000</color>
+    <color name="user_balance">#b14931</color>
+    
 </resources>

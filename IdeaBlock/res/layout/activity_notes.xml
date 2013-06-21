@@ -3,48 +3,41 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/app_padding_left_right"
-    android:paddingRight="@dimen/app_padding_left_right"
-    android:paddingTop="10dp" >
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/note_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:gravity="center"
+        android:paddingBottom="@dimen/common_title_padding_top_bottom"
+        android:paddingTop="@dimen/common_title_padding_top_bottom"
         android:text="@string/title_activity_notes"
-        android:textSize="20sp" />
+        android:textSize="@dimen/app_title_font_size" />
 
-    <TextView
-        android:id="@+id/note_create"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:text="Create New"
-        android:textSize="15sp" />
+        android:layout_height="@dimen/common_box_height"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right" >
 
-    <EditText
-        android:id="@+id/notes_edit_new"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_edittext_final"
-        android:hint="Tap here to add"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom" />
+        <Button
+            android:id="@+id/notes_button_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Create a new Note" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/notes_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:divider="#b5b5b5"
-        android:dividerHeight="1dp" />
+        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/common_divider_height"
+        android:smoothScrollbar="true" />
 
 </LinearLayout>
