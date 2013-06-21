@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/backdrop"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/app_padding_left_right"
-    android:paddingRight="@dimen/app_padding_left_right"
     tools:context=".Contacts" >
 
     <TextView
@@ -13,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="@dimen/common_title_padding_top_bottom"
         android:paddingBottom="@dimen/common_title_padding_top_bottom"
+        android:paddingTop="@dimen/common_title_padding_top_bottom"
         android:text="@string/title_activity_contacts"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
@@ -22,6 +20,8 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="107dp"
+        android:layout_marginLeft="@dimen/app_padding_left_right"
+        android:layout_marginRight="@dimen/app_padding_left_right"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -29,7 +29,7 @@
             android:id="@+id/contacts_edit_search"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
+            android:layout_marginRight="@dimen/row_contacts_elements_spacing"
             android:layout_weight="1"
             android:background="@drawable/shape_edittext_final"
             android:ems="10"
@@ -53,11 +53,9 @@
         android:id="@+id/contacts_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:divider="#b5b5b5"
-        android:dividerHeight="2dp"
-        android:footerDividersEnabled="true"
-        android:headerDividersEnabled="true" >
+        android:layout_marginTop="@dimen/shape_edittext_padding_top_bottom"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/common_divider_height" >
     </ListView>
 
 </LinearLayout>

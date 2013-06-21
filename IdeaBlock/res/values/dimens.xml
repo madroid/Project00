@@ -18,8 +18,9 @@
 	<dimen name="common_title_padding_top_bottom">20dp</dimen>
 	<dimen name="common_box_padding_top_bottom_send_money">16dp</dimen>
 	<dimen name="common_box_padding_top_bottom_contacts">16dp</dimen>
-	<dimen name="common_box_margin_top_send_request_deposit">60dp</dimen>
-	
+	<dimen name="common_box_margin_top_send_request_deposit">167dp</dimen>
+	<dimen name="common_element_padding_top_send_request_deposit">20dp</dimen>
+	<dimen name="common_divider_height">2dp</dimen>
 	<!-- Send Money Dimenstions -->
 	
 	
@@ -28,10 +29,17 @@
 	<dimen name="shape_edittext_corner_radius_zero">0dp</dimen>
 	<dimen name="shape_edittext_padding_left_right">10dp</dimen>
 	<dimen name="shape_edittext_padding_top_bottom">7dp</dimen>
-	<dimen name="shape_edittext_intra_distance">15dp</dimen>
+	<dimen name="shape_edittext_intra_distance">20dp</dimen>
 	
 	
 	<!-- Application dimensions -->
 	<dimen name="app_padding_left_right">30dp</dimen>
 	<dimen name="app_profile_border_width">5dp</dimen>
+	
+	
+	<!-- row contacts dimensions -->
+	<dimen name="row_contacts_padding_top_bottom">8dp</dimen>
+	<dimen name="row_contacts_text_padding_top">5dp</dimen>
+	<dimen name="row_contacts_image_intra_distance">2dp</dimen>
+	<dimen name="row_contacts_elements_spacing">5dp</dimen>
 </resources>

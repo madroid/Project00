@@ -3,36 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/backdrop"
+    android:background="@drawable/backdrop_send"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingLeft="@dimen/app_padding_left_right"
     android:paddingRight="@dimen/app_padding_left_right"
+    android:paddingTop="@dimen/common_box_margin_top_send_request_deposit"
     tools:context=".SendMoney" >
 
-    <ImageView
-        android:id="@+id/image_sendMoney_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginTop="30dp"
-        android:clickable="true"
-        android:src="@drawable/send_money_title" />
-
-    <TextView
-        android:id="@+id/send_text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:text="Send Money"
-        android:textColor="@android:color/black"
-        android:textSize="12sp" />
 
     <EditText
         android:id="@+id/send_receiverID"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
         android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
         android:background="@drawable/shape_edittext_final"
         android:ellipsize="middle"

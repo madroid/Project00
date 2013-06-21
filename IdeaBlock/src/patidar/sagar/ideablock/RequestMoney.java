@@ -21,7 +21,7 @@ public class RequestMoney extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_request_money);
-		this.text_title = (TextView) findViewById(R.id.request_text_title);
+		//this.text_title = (TextView) findViewById(R.id.request_text_title);
 		this.edit_receiverID = (EditText) findViewById(R.id.request_receiverID);
 		this.edit_amount = (EditText) findViewById(R.id.request_amount);
 		this.edit_pin = (EditText) findViewById(R.id.request_pin);
@@ -30,7 +30,7 @@ public class RequestMoney extends Activity {
 		
 		Constants.setButtonFontStyle(getAssets(), this.button_request);
 		Constants.setEditTextFontStyle(getAssets(), this.edit_amount,this.edit_comment,this.edit_pin,this.edit_receiverID);
-		Constants.setTextViewFontStyle(getAssets(), this.text_title);
+		//Constants.setTextViewFontStyle(getAssets(), this.text_title);
 		
 		Intent intent = getIntent();
 		boolean check  = intent.getBooleanExtra("check", false);

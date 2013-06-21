@@ -25,7 +25,7 @@ public class DepositMoney extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_deposite_money);
 		
-		this.text_title = (TextView) findViewById(R.id.deposite_text_title);
+		//this.text_title = (TextView) findViewById(R.id.deposite_text_title);
 		this.edit_account = (EditText) findViewById(R.id.deposite_accountNo);
 		this.edit_amount = (EditText) findViewById(R.id.deposite_amount);
 		this.edit_password = (EditText) findViewById(R.id.deposite_password);
@@ -36,7 +36,7 @@ public class DepositMoney extends Activity {
 		
 		Constants.setButtonFontStyle(getAssets(), this.button_deposite);
 		Constants.setEditTextFontStyle(getAssets(), this.edit_account,this.edit_amount,this.edit_id,this.edit_password,this.edit_pin);
-		Constants.setTextViewFontStyle(getAssets(), this.text_title);
+		//Constants.setTextViewFontStyle(getAssets(), this.text_title);
 		
 	}
 

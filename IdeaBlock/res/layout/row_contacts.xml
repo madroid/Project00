@@ -1,69 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/app_padding_left_right"
+    android:layout_marginRight="@dimen/app_padding_left_right"
+    android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp" >
+    android:paddingBottom="@dimen/row_contacts_padding_top_bottom"
+    android:paddingTop="@dimen/row_contacts_padding_top_bottom" >
 
-   <FrameLayout android:id="@+id/contacts_default_pic"
+    <FrameLayout
+        android:id="@+id/contacts_default_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:foreground="@drawable/frame"
-        android:layout_alignParentLeft="true"
         android:padding="@dimen/app_profile_border_width"
-        android:layout_marginRight="5dip">
- 
+        android:layout_marginRight="@dimen/row_contacts_elements_spacing" >
+
         <ImageView
             android:id="@+id/contacts_default_pic2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/default_profile_pic"/>
+            android:src="@drawable/default_profile_pic" />
+    </FrameLayout>
 
-    </FrameLayout>     
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="top"
+        android:layout_marginLeft="@dimen/row_contacts_elements_spacing"
+        android:layout_marginRight="@dimen/row_contacts_elements_spacing"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/row_contacts_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/row_contacts_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="15sp" />
         
-    <TextView
-        android:id="@+id/row_contacts_name"
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/contacts_default_pic"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="2dp"
-        android:layout_toRightOf="@id/contacts_default_pic"
-        android:textSize="15sp"
-        android:text="Name"/>
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/row_contacts_elements_spacing"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/row_contacts_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/row_contacts_name"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="2dp"
-        android:layout_toRightOf="@id/contacts_default_pic"
-        android:text="ID"
-        android:textSize="15sp"/>
+        <ImageView
+            android:id="@+id/contacts_button_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/row_contacts_image_intra_distance"
+            android:src="@drawable/button_send" />
 
-    
-    <ImageView
-        android:id="@+id/contacts_button_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/contacts_default_pic"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="2dp"
-        android:src="@drawable/button_send" />
+        <ImageView
+            android:id="@+id/contacts_button_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/row_contacts_image_intra_distance"
+            android:src="@drawable/button_send" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/contacts_button_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/contacts_button_send"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="4dp"
-        
-        android:src="@drawable/button_send" />
-
-</RelativeLayout>
+</LinearLayout>

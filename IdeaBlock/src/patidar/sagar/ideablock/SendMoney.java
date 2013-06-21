@@ -32,11 +32,11 @@ public class SendMoney extends Activity {
 		this.edit_pin = (EditText) findViewById(R.id.send_pin);
 		this.edit_receiver = (EditText) findViewById(R.id.send_receiverID);
 		this.button_send = (Button) findViewById(R.id.send_button);
-		this.image_header = (ImageView) findViewById(R.id.image_sendMoney_header);
+		//this.image_header = (ImageView) findViewById(R.id.image_sendMoney_header);
 		
 		Constants.setButtonFontStyle(getAssets(), this.button_send);
 		Constants.setEditTextFontStyle(getAssets(), this.edit_amount,this.edit_comment,this.edit_pin,this.edit_receiver);
-		Constants.setTextViewFontStyle(getAssets(), this.text_title);
+		//Constants.setTextViewFontStyle(getAssets(), this.text_title);
 		
 //		this.image_header.setY();
 		
