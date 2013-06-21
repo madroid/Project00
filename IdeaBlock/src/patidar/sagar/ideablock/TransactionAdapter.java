@@ -9,6 +9,7 @@ import patidar.sagar.ideablock.SearchContactsAdapter.ViewHolder;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,34 +89,28 @@ public class TransactionAdapter extends ArrayAdapter<HashMap<String, String>> {
 	}
 	
 	
-    public void filter(String month,String year) {
+    public void filter(int month,String year) {
         data_list.clear();
-        if(month.equals("Month") && year.equals("Year")){
-        	data_list.addAll(original_data_list);
-        }
-        else if(!month.equals("Month") && year.equals("Year")){
+        int year2  = Integer.parseInt(year);
             for (HashMap hmap : original_data_list) {
-                if (hmap.get("month").equals(month)) {
-                    data_list.add(hmap);
-                }
+            	Log.d("YEAR", ""+hmap.get("year"));
+            	Log.d("month", ""+hmap.get("month"));
+            	int tempYear = Integer.parseInt(hmap.get("year").toString());
+            	int tempMonth = Integer.parseInt(hmap.get("month").toString());
+            	if(tempYear>year2){
+	                data_list.add(hmap);
+            	}
+            	else if((tempYear==year2) && (tempMonth>=month)){
+            		data_list.add(hmap);
+            	}
             }
-        }
-        else if(month.equals("Month") && !year.equals("Year")){
-            for (HashMap hmap : original_data_list) {
-                if (hmap.get("year").equals(year)) {
-                    data_list.add(hmap);
-                }
-            }
-        }
-        else{
-            for (HashMap hmap : original_data_list) {
-                if (hmap.get("month").equals(month) && hmap.get("year").equals(year)) {
-                    data_list.add(hmap);
-                }
-            }
-        }    
-            
         notifyDataSetChanged();
+    }
+    
+    public void resetFilter(){
+    	data_list.clear();
+    	data_list.addAll(original_data_list);
+    	notifyDataSetChanged();
     }
     
 	

@@ -2,20 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/app_padding_left_right"
-    android:layout_marginRight="@dimen/app_padding_left_right"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingBottom="@dimen/row_contacts_padding_top_bottom"
-    android:paddingTop="@dimen/row_contacts_padding_top_bottom" >
+    android:paddingBottom="@dimen/row_padding_top_bottom"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
+    android:paddingTop="@dimen/row_padding_top_bottom" >
 
     <FrameLayout
         android:id="@+id/contacts_default_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/row_contacts_elements_spacing"
         android:foreground="@drawable/frame"
-        android:padding="@dimen/app_profile_border_width"
-        android:layout_marginRight="@dimen/row_contacts_elements_spacing" >
+        android:padding="@dimen/app_profile_border_width" >
 
         <ImageView
             android:id="@+id/contacts_default_pic2"
@@ -27,10 +27,11 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_gravity="top"
         android:layout_marginLeft="@dimen/row_contacts_elements_spacing"
         android:layout_marginRight="@dimen/row_contacts_elements_spacing"
+        android:paddingTop="5dp"
+        android:layout_weight="1"
         android:orientation="vertical" >
 
         <TextView
@@ -46,14 +47,13 @@
             android:layout_height="wrap_content"
             android:text="ID"
             android:textSize="15sp" />
-        
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:layout_marginLeft="@dimen/row_contacts_elements_spacing"
+        android:gravity="center_vertical"
         android:orientation="vertical" >
 
         <ImageView

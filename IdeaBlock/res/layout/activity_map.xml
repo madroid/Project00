@@ -2,50 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="20dp"
     android:background="@drawable/backdrop"
-    android:orientation="vertical">
-    
-    <TextView 
+    android:orientation="vertical" >
+
+    <TextView
         android:id="@+id/map_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingBottom="@dimen/common_title_padding_top_bottom"
+        android:paddingTop="@dimen/common_title_padding_top_bottom"
         android:text="Around Me"
-        android:textSize="20sp"
-        android:paddingBottom="40dp"/>
-    
-    <LinearLayout 
+        android:textSize="20sp" />
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="107dp"
         android:orientation="horizontal"
-        android:paddingBottom="20dp">
-        
-        <EditText 
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/app_padding_left_right"
+        android:layout_marginRight="@dimen/app_padding_left_right" >
+
+        <EditText
             android:id="@+id/map_edit_search"
             android:layout_width="0dp"
-            android:layout_weight="4"
             android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:imeOptions="actionDone"
-            android:hint="search anything. eg: coffee"
-            android:textSize="15sp"/>
-        
-        <Button 
-            android:id="@+id/map_button_go"
-            android:layout_width="0dp"
             android:layout_weight="1"
+            android:hint="search anything. eg: coffee"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:background="@drawable/shape_edittext_final"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"/>
+
+        <Button
+            android:id="@+id/map_button_go"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Search"/>
-        
+            android:text="Search"
+            android:textSize="15sp" />
     </LinearLayout>
 
-<fragment
-          android:id="@+id/map"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:name="com.google.android.gms.maps.MapFragment"/>
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-          
 </LinearLayout>

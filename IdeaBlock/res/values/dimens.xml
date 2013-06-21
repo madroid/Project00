@@ -25,7 +25,7 @@
 	
 	
 	<!-- Edit text box properties -->
-	<dimen name="shape_edittext_corner_radius">5dp</dimen>
+	<dimen name="shape_edittext_corner_radius">10dp</dimen>
 	<dimen name="shape_edittext_corner_radius_zero">0dp</dimen>
 	<dimen name="shape_edittext_padding_left_right">10dp</dimen>
 	<dimen name="shape_edittext_padding_top_bottom">7dp</dimen>
@@ -35,11 +35,18 @@
 	<!-- Application dimensions -->
 	<dimen name="app_padding_left_right">30dp</dimen>
 	<dimen name="app_profile_border_width">5dp</dimen>
-	
+	<dimen name="app_title_font_size">20sp</dimen>	
 	
 	<!-- row contacts dimensions -->
-	<dimen name="row_contacts_padding_top_bottom">8dp</dimen>
+	<dimen name="row_padding_top_bottom">8dp</dimen>
 	<dimen name="row_contacts_text_padding_top">5dp</dimen>
 	<dimen name="row_contacts_image_intra_distance">2dp</dimen>
 	<dimen name="row_contacts_elements_spacing">5dp</dimen>
+	
+	<!-- row transaction dimensions -->
+	<dimen name="row_transaction_intra_distance">2dp</dimen>
+	<dimen name="row_transaction_text_id_size">15sp</dimen>
+	<dimen name="row_transaction_text_other_size">15sp</dimen>
+	<dimen name="row_transaction_text_spinner_intra_distance">8dp</dimen>
+	
 </resources>

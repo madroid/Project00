@@ -84,6 +84,9 @@ public class Home extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Home.this,Transactions.class);
+				if(Transactions.adapter!=null){
+					Transactions.adapter.resetFilter();
+				}
 				startActivity(intent);
 
 			}
@@ -94,7 +97,11 @@ public class Home extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Home.this,Contacts.class);
+				if(Contacts.adapter!=null){
+					Contacts.adapter.resetFilter();
+				}
 				startActivity(intent);
+				
 			}
 		});
 

@@ -49,7 +49,7 @@ public class Login extends Activity {
 
 	private static int success;
 
-	private static JSONObject jObj ;
+	private JSONObject jObj ;
 
 	public static ArrayList<HashMap<String, String>> arrlistContacts = new ArrayList<HashMap<String,String>>();
 	public static ArrayList<HashMap<String, String>> arrlistTransactions = new ArrayList<HashMap<String,String>>();
@@ -123,7 +123,7 @@ public class Login extends Activity {
 					ResponseHandler<String> responseHandler = new BasicResponseHandler();
 					final String httpResponse = httpClient.execute(httppost, responseHandler);
 
-//					Log.d("OUTPUT", httpResponse);
+					Log.d("OUTPUT", httpResponse);
 					jObj = new JSONObject(httpResponse);
 					success = jObj.getInt("success");
 					String message = jObj.getString("message");
@@ -175,9 +175,6 @@ public class Login extends Activity {
 										for(int i=0;i<length;i++){
 											JSONObject row  = transactions.getJSONObject(i);
 											HashMap<String, String> hMap = new HashMap<String, String>();
-											Timestamp time = new Timestamp(row.getInt("timestamp")); 
-											Date date = new Date(time.getTime());
-											int dt = date.getDate();
 //											Log.d("Date", dt+" "+row.getString("month")+", "+row.getString("year"));
 											hMap.put(Transactions.PAYMENT_AMOUNT, row.getString("amount"));
 											hMap.put(Transactions.PAYMENT_DATE, row.getString("date"));

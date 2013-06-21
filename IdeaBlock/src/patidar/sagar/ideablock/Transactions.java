@@ -2,6 +2,7 @@ package patidar.sagar.ideablock;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,8 +16,7 @@ public class Transactions extends Activity {
 	private Spinner month ;
 	private Spinner year ;
 	private TextView text_title;
-	private TextView text_year;
-	private TextView text_month ;
+	private TextView text_month_year ;
 
 	private ListView listView ;
 
@@ -26,10 +26,9 @@ public class Transactions extends Activity {
 	public static final String PAYMENT_TIME = "trans_time";
 	public static final String PAYMENT_YEAR = "year";
 	public static final String PAYMENT_MONTH = "month";
-	
-	private static TransactionAdapter  adapter ;
-	
-	private static boolean yearBool = false, monthBool = false;
+
+	public static TransactionAdapter  adapter ;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,63 +39,49 @@ public class Transactions extends Activity {
 		year = (Spinner) findViewById(R.id.trans_spinner_year);
 		listView = (ListView) findViewById(R.id.trans_list);
 		text_title = (TextView) findViewById(R.id.trans_title);
-		text_month = (TextView) findViewById(R.id.trans_text_month);
-		text_year = (TextView) findViewById(R.id.trans_text_year);
-		
-		if(Login.arrlistTransactions.size()>0){
-		}
-		
-		Constants.setTextViewFontStyle(getAssets(), this.text_title,this.text_month,this.text_year);
-	
+		text_month_year = (TextView) findViewById(R.id.trans_text_month_year);
+
+
+		Constants.setTextViewFontStyle(getAssets(), this.text_title,this.text_month_year);
+
 		adapter = new TransactionAdapter(Transactions.this, R.layout.row_transaction, Login.arrlistTransactions);
 		listView.setAdapter(adapter);
-		
+
 		year.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-				// TODO Auto-generated method stub
-//				Toast.makeText(Transactions.this, (String)year.getSelectedItem(), Toast.LENGTH_LONG).show();
-				if(yearBool){
-					adapter.filter((String)month.getSelectedItem(), (String)year.getSelectedItem());
-					
-				}
-				text_year.setText((String)year.getSelectedItem());
+				
+				adapter.filter(month.getSelectedItemPosition()+1, (String)year.getSelectedItem());
+				text_month_year.setText(month.getSelectedItem()+" "+year.getSelectedItem());
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
-				// TODO Auto-generated method stub
 			}
 		});
-		
+
 		month.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-				// TODO Auto-generated method stub
-				if(monthBool){
-					adapter.filter((String)month.getSelectedItem(), (String)year.getSelectedItem());
-				}
-				text_month.setText((String)month.getSelectedItem());
+				adapter.filter(month.getSelectedItemPosition()+1, (String)year.getSelectedItem());
+				text_month_year.setText(month.getSelectedItem()+" "+year.getSelectedItem());
+				
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
-				// TODO Auto-generated method stub
 			}
-			
+
 		});
 
-//		adapter = new TransactionAdapter(Transactions.this, R.layout.row_transaction, Login.arrlistTransactions);
 		
-		monthBool = true;
-		yearBool = true ;
+		adapter.resetFilter();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.transactions, menu);
 		return true;
 	}

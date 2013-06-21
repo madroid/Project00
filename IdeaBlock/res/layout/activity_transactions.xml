@@ -3,92 +3,87 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/backdrop"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/app_padding_left_right"
-    android:paddingRight="@dimen/app_padding_left_right"
-    android:paddingTop="20dp" >
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/trans_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="12dp"
         android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/common_title_padding_top_bottom"
+        android:paddingTop="@dimen/common_title_padding_top_bottom"
         android:text="@string/title_activity_transactions"
-        android:textSize="20sp" />
+        android:textSize="@dimen/app_title_font_size" />
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="17dp"
-        android:orientation="horizontal" >
+        android:layout_height="107dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right" >
 
-        <TextView
-            android:id="@+id/trans_text_month"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_weight="2"
-            android:gravity="end"
-            android:text="Month"
-            android:textSize="15sp" />
+            android:orientation="horizontal" 
+            android:layout_marginBottom="@dimen/row_transaction_text_spinner_intra_distance">
 
-        <TextView
-            android:id="@+id/trans_text_year"
-            android:layout_width="0dp"
+            <TextView
+                android:id="@+id/trans_text_month_year"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:gravity="center"
+                android:text="Month Year"
+                android:textSize="@dimen/app_title_font_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="2"
-            android:gravity="start"
-            android:text="Year"
-            android:textSize="15sp" />
-    </LinearLayout>
+            android:orientation="horizontal" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp" >
+            <Spinner
+                android:id="@+id/trans_spinner_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_edittext_final_left"
+                android:entries="@array/trans_month_name"
+                android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+                android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+                android:paddingRight="@dimen/shape_edittext_padding_left_right"
+                android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+                android:prompt="@string/trans_month_prompt" />
 
-        <Spinner
-            android:id="@+id/trans_spinner_month"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
-            android:layout_weight="2"
-            android:background="@drawable/shape_edittext_final_left"
-            android:entries="@array/trans_month_name"
-            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-            android:paddingRight="@dimen/shape_edittext_padding_left_right"
-            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-            android:prompt="@string/trans_month_prompt" />
-
-        <Spinner
-            android:id="@+id/trans_spinner_year"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="2"
-            android:background="@drawable/shape_edittext_final_right"
-            android:entries="@array/trans_year"
-            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-            android:paddingRight="@dimen/shape_edittext_padding_left_right"
-            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-            android:prompt="@string/trans_year_prompt" />
+            <Spinner
+                android:id="@+id/trans_spinner_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_edittext_final_right"
+                android:entries="@array/trans_year"
+                android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+                android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+                android:paddingRight="@dimen/shape_edittext_padding_left_right"
+                android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+                android:prompt="@string/trans_year_prompt" />
+        </LinearLayout>
     </LinearLayout>
 
     <ListView
         android:id="@+id/trans_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:divider="#b5b5b5"
-        android:dividerHeight="1dp"/>
+        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/common_divider_height"
+        android:smoothScrollbar="true"
+        android:textFilterEnabled="true" />
 
 </LinearLayout>

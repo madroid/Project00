@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:background="@drawable/shape_edittext_final"
             android:ems="10"
-            android:hint="Search"
+            android:hint="Search Contacts"
             android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
             android:paddingLeft="@dimen/shape_edittext_padding_left_right"
             android:paddingRight="@dimen/shape_edittext_padding_left_right"
@@ -53,9 +53,11 @@
         android:id="@+id/contacts_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/shape_edittext_padding_top_bottom"
+        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
         android:divider="@color/divider_color"
-        android:dividerHeight="@dimen/common_divider_height" >
+        android:dividerHeight="@dimen/common_divider_height"
+        android:smoothScrollbar="true"
+        android:textFilterEnabled="true" >
     </ListView>
 
 </LinearLayout>

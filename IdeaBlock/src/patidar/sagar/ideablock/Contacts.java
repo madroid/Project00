@@ -16,8 +16,6 @@ public class Contacts extends Activity {
 	private ListView listView ;
 
 	private TextView text_title;
-	private TextView text_row_name ;
-	private TextView text_row_id;
 	
 	private EditText text_search ;
 	private Button button_add_contact;
@@ -25,15 +23,13 @@ public class Contacts extends Activity {
 	public static final String CONTACT_NAME = "name";
 	public static final String CONTACT_ID = "id";
 	
-	private SearchContactsAdapter adapter3;
+	public static SearchContactsAdapter adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contacts);
 		
-		this.text_row_id = (TextView) findViewById(R.id.row_contacts_id);
-		this.text_row_name = (TextView) findViewById(R.id.row_contacts_name);
 		this.text_title = (TextView) findViewById(R.id.contacts_text_title);
 		text_search = (EditText) findViewById(R.id.contacts_edit_search);
 		
@@ -42,9 +38,9 @@ public class Contacts extends Activity {
 		
 		Constants.setEditTextFontStyle(getAssets(), this.text_search);
 		Constants.setTextViewFontStyle(getAssets(), this.text_title);
-		adapter3 = new SearchContactsAdapter(Contacts.this,R.layout.row_contacts,R.id.row_contacts_name,Login.arrlistContacts);
+		adapter = new SearchContactsAdapter(Contacts.this,R.layout.row_contacts,R.id.row_contacts_name,Login.arrlistContacts);
 	  
-		listView.setAdapter(adapter3);
+		listView.setAdapter(adapter);
 		
 		text_search.addTextChangedListener(new TextWatcher() {
 			@Override
@@ -60,7 +56,8 @@ public class Contacts extends Activity {
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				String text = text_search.getText().toString();
-				adapter3.filter(text);
+				adapter.filter(text);
+				
 			}
 		});
 		

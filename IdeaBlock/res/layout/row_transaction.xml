@@ -1,86 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="5dip" >
+    android:paddingBottom="@dimen/row_padding_top_bottom"
+    android:paddingLeft="@dimen/app_padding_left_right"
+    android:paddingRight="@dimen/app_padding_left_right"
+    android:paddingTop="@dimen/row_padding_top_bottom" 
+    android:gravity="center">
 
-     
-    
-    <TextView
-        android:id="@+id/trans_ID"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="2dp"
-        android:text="ID "
-        android:layout_marginLeft="10dp"
-        android:textColor="#040404"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:layout_weight="1"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/trans_ID2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/trans_ID"
-        android:text="ID_Value "
-        android:textColor="#040404"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/row_transaction_intra_distance"
+            android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/trans_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/trans_ID"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginTop="1dip"
-        android:text="Amount: Rs. "
-        android:textColor="#343434"
-        android:textSize="12sp" />
+            <TextView
+                android:id="@+id/trans_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID "
+                android:textSize="@dimen/row_transaction_text_id_size"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/trans_amount2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/trans_ID"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@id/trans_amount"
-        android:text="Amount_Value "
-        android:textColor="#343434"
-        android:textSize="12sp" />
+            <TextView
+                android:id="@+id/trans_ID2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID_Value "
+                android:textSize="@dimen/row_transaction_text_id_size"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/trans_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/trans_amount"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginTop="1dip"
-        android:text="Date: "
-        android:textColor="#343434"
-        android:textSize="12sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/row_transaction_intra_distance"
+            android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/trans_date2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@id/trans_date"
-        android:layout_below="@id/trans_amount"
-        android:text="Date_Value "
-        android:textColor="#343434"
-        android:textSize="12sp" />
+            <TextView
+                android:id="@+id/trans_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount: Rs. "
+                android:textSize="@dimen/row_transaction_text_other_size" />
+
+            <TextView
+                android:id="@+id/trans_amount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount_Value "
+                android:textSize="@dimen/row_transaction_text_other_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/row_transaction_intra_distance"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/trans_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: "
+                android:textSize="@dimen/row_transaction_text_other_size" />
+
+            <TextView
+                android:id="@+id/trans_date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date_Value "
+                android:textSize="@dimen/row_transaction_text_other_size" />
+        </LinearLayout>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/trans_image_row_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="5dp"
         android:src="@drawable/button_details" />
- 
-</RelativeLayout>
+
+</LinearLayout>

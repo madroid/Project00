@@ -110,5 +110,11 @@ public class SearchContactsAdapter extends ArrayAdapter<HashMap<String, String>>
         }	 
         notifyDataSetChanged();
     }
+    
+    public void resetFilter(){
+    	data_list.clear();
+    	data_list.addAll(original_data_list);
+    	notifyDataSetChanged();
+    }
 	
 }

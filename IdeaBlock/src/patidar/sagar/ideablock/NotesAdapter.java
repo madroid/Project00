@@ -71,7 +71,6 @@ public class NotesAdapter extends ArrayAdapter<HashMap<String, String>>{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				cntxt.startActivity(intent);
-//				Log.d("POSITION_CHECK", intent.getStringExtra("position"));
 			}
 		});
 		
