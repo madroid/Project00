@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -36,11 +37,10 @@ public class Login extends Activity {
 
 	private EditText inputUsername;
 	private EditText inputPassword;
-
 	private Button loginButton;
-
 	private TextView forgotID ;
 	private TextView forgotPass ;
+	private Toast toast ;
 
 	private static ProgressDialog pDialog;
 	private static HttpClient httpClient;
@@ -50,7 +50,6 @@ public class Login extends Activity {
 	private static int success;
 
 	private JSONObject jObj ;
-
 	public static ArrayList<HashMap<String, String>> arrlistContacts = new ArrayList<HashMap<String,String>>();
 	public static ArrayList<HashMap<String, String>> arrlistTransactions = new ArrayList<HashMap<String,String>>();
 	public static ArrayList<HashMap<String, String>> arrlistNotes = new ArrayList<HashMap<String,String>>();
@@ -61,7 +60,11 @@ public class Login extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-
+		
+		toast = new Toast(this);
+		toast.setGravity(Gravity.CENTER, 0, 0);
+		toast.setDuration(toast.LENGTH_LONG);
+		
 		inputUsername = (EditText) findViewById(R.id.loginUsername);
 		inputPassword = (EditText) findViewById(R.id.loginPassword);
 		loginButton = (Button) findViewById(R.id.loginbutton);
@@ -85,6 +88,7 @@ public class Login extends Activity {
 				else{
 					AlertDialogManager.showAlertDialog(Login.this, "Network Error!", 
 							"Please connect to a working internet.", true);
+//					Toast.makeText(Login.this, "Please connect to a working Internet Connection.", Toast.LENGTH_LONG).show();
 				}
 			}
 		});
@@ -121,9 +125,8 @@ public class Login extends Activity {
 					httppost.setEntity(new UrlEncodedFormEntity(param));
 
 					ResponseHandler<String> responseHandler = new BasicResponseHandler();
-					final String httpResponse = httpClient.execute(httppost, responseHandler);
+					final String httpResponse = httpClient.execute(httppost, responseHandler); //Constants.data ;//
 
-					Log.d("OUTPUT", httpResponse);
 					jObj = new JSONObject(httpResponse);
 					success = jObj.getInt("success");
 					String message = jObj.getString("message");
@@ -181,7 +184,9 @@ public class Login extends Activity {
 											hMap.put(Transactions.PAYMENT_TIME, row.getString("time"));
 											hMap.put(Transactions.PAYMENT_MONTH, row.getString("month"));
 											hMap.put(Transactions.PAYMENT_YEAR, row.getString("year"));
-
+											hMap.put(Transactions.PAYMENT_SENDER, row.getString("sender"));
+											hMap.put(Transactions.PAYMENT_NAME, row.getString("name"));
+											
 											String id1 = row.getString("from_id");
 											String id2 = row.getString("to_id");
 											if(id1.equals(user_detail.getString("user_id"))){
@@ -195,8 +200,10 @@ public class Login extends Activity {
 									}
 
 								} catch (JSONException e) {
+									
 									e.printStackTrace();
 									Log.d("ERROR Login.php", "IN TRANSACTION THREAD");
+									
 								}
 							}
 						});
@@ -231,8 +238,10 @@ public class Login extends Activity {
 
 				}
 				catch(Exception e){
+					success = 6;
 					e.printStackTrace();
 					Log.d("LOGIN.PHP ERROR", "SOME ERROR OCCURRED");
+					
 				}
 			}
 
@@ -250,17 +259,28 @@ public class Login extends Activity {
 			}
 			else if(success==2 || success==3){
 				Log.d("LOGIN UNSUCCESSFUL", "FORGOT ID ? | FORGOT PASSWORD");
-				AlertDialogManager.showAlertDialog(Login.this, "Unsuccessful Login", "Forgot ID? | Forgot Password",
-						true);
+//				AlertDialogManager.showAlertDialog(Login.this, "Unsuccessful Login", "Forgot ID? | Forgot Password",
+//						true);
+				toast.setText("Unsuccessful Login! Forgot ID or Password ?");
+				toast.show();
 			}
 			else if(success == 4){
 				AlertDialogManager.showAlertDialog(Login.this, "New User?", "Please Sign Up!", true);
+				toast.setText("New user? Please Sign up!");
+				toast.show();
 			}
 			else if(success == 5){
-				Toast.makeText(Login.this, "Please fill up the fields!", Toast.LENGTH_LONG).show();
+//				Toast.makeText(Login.this, "Please fill up the fields!", Toast.LENGTH_LONG).show();
+				toast.setText("Please fill up the fields!");
+				toast.show();
+			}
+			else if(success == 6){
+//				Toast.makeText(Login.this, "Oops! Some error occurred in server connection. Make sure that you can access internet!", Toast.LENGTH_LONG).show();
+				toast.setText("Oops! Some error occurred in server connection. Make sure that you can access internet!");
+				toast.show();
 			}
 		}
-
+		
 
 	}
 
@@ -271,7 +291,5 @@ public class Login extends Activity {
 
 		return true;
 	}
-
-
 
 }

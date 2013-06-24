@@ -24,7 +24,7 @@ public class Home extends Activity {
 	private TextView text_name;
 	private TextView text_id;
 	private TextView text_money;
-
+	public static String USER_ID  = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class Home extends Activity {
 		text_name.setText(i.getStringExtra("user_name"));
 		text_id.setText(i.getStringExtra("user_id"));
 		text_money.setText("Rs. "+i.getStringExtra("user_balance"));
-
+		USER_ID = i.getStringExtra("user_id");
 		sendMoney.setOnClickListener(new View.OnClickListener() {
 
 			@Override

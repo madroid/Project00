@@ -56,22 +56,26 @@
         <activity
             android:name="patidar.sagar.ideablock.Login"
             android:label="@string/title_activity_login"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.SendMoney"
             android:label="@string/title_activity_send_money"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.RequestMoney"
             android:label="@string/title_activity_request_money"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.DepositMoney"
             android:label="@string/title_activity_deposite_money"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.Transactions"
@@ -92,15 +96,20 @@
         <activity
             android:name="patidar.sagar.ideablock.Map"
             android:label="@string/title_activity_map"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="patidar.sagar.ideablock.Details"
+            android:name="patidar.sagar.ideablock.NoteDetails"
             android:label="@string/title_activity_details" >
         </activity>
         <activity
             android:name="patidar.sagar.ideablock.TransactionDetails"
             android:label="@string/title_activity_transaction_details" >
+        </activity>
+        <activity
+            android:name="patidar.sagar.ideablock.Invoice"
+            android:label="@string/title_activity_invoice" >
         </activity>
     </application>
 

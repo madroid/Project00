@@ -82,5 +82,6 @@
 
     <string name="title_activity_details">Details</string>
     <string name="title_activity_transaction_details">TransactionDetails</string>
+    <string name="title_activity_invoice">Invoice</string>
 
 </resources>

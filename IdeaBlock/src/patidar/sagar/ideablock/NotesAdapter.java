@@ -68,7 +68,7 @@ public class NotesAdapter extends ArrayAdapter<HashMap<String, String>>{
 		HashMap<String, String> item = getItem(position);
 		holder.notes_subject.setText(item.get("subject"));
 		holder.notes_message.setText(item.get("message"));
-		final Intent intent = new Intent(cntxt,Details.class);
+		final Intent intent = new Intent(cntxt,NoteDetails.class);
 		intent.putExtra("position", position);
 		
 		holder.notes_arrow.setOnClickListener(new View.OnClickListener() {

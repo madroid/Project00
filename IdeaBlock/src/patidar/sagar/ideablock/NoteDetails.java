@@ -9,10 +9,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Details extends Activity {
+public class NoteDetails extends Activity {
 
 	private TextView text_date ;
 	private TextView text_date_value ;
@@ -22,10 +23,12 @@ public class Details extends Activity {
 	private TextView text_subject_value;
 	private TextView text_content ;
 	
-	private ImageButton button_left ;
-	private ImageButton button_right ;
+	private ImageView button_left ;
+	private ImageView button_right ;
 
 	private static int position ;
+	private boolean isLeftTriggered  = false;
+	private boolean isRightTriggered  = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,8 @@ public class Details extends Activity {
 		text_subject_value  = (TextView) findViewById(R.id.details_subject_value);
 		text_content  = (TextView) findViewById(R.id.details_content);
 		
-		button_left = (ImageButton) findViewById(R.id.details_button_left);
-		button_right = (ImageButton) findViewById(R.id.details_button_right);
+		button_left = (ImageView) findViewById(R.id.details_button_left);
+		button_right = (ImageView) findViewById(R.id.details_button_right);
 		
 		Constants.setTextViewFontStyle(getAssets(), this.text_date,this.text_content,this.text_date_value,
 				this.text_subject_name,this.text_subject_value,this.text_time,this.text_time_value);
@@ -68,8 +71,9 @@ public class Details extends Activity {
 					text_subject_value.setText(prevItem.get("subject"));
 					text_content.setText(prevItem.get("message"));
 				}
-				else{
-					Toast.makeText(Details.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
+				else if(prev<0 && !isLeftTriggered){
+					Toast.makeText(NoteDetails.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
+					isLeftTriggered = true ;
 				}
 			}
 		});
@@ -88,8 +92,9 @@ public class Details extends Activity {
 					text_subject_value.setText(nextItem.get("subject"));
 					text_content.setText(nextItem.get("message"));
 				}
-				else{
-					Toast.makeText(Details.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
+				else if(next>=Login.arrlistNotes.size() && !isRightTriggered){
+					Toast.makeText(NoteDetails.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
+					isRightTriggered = true ;
 				}
 			}
 		});		

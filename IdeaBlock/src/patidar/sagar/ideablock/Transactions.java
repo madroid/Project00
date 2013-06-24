@@ -1,8 +1,8 @@
 package patidar.sagar.ideablock;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,8 +17,8 @@ public class Transactions extends Activity {
 	private Spinner year ;
 	private TextView text_title;
 	private TextView text_month_year ;
-
-	private ListView listView ;
+	private static Context context ;
+	private static ListView listView ;
 
 	public static final String PAYMENT_ID = "trans_ID2";
 	public static final String PAYMENT_AMOUNT = "trans_amount2";
@@ -26,7 +26,9 @@ public class Transactions extends Activity {
 	public static final String PAYMENT_TIME = "trans_time";
 	public static final String PAYMENT_YEAR = "year";
 	public static final String PAYMENT_MONTH = "month";
-
+	public static final String PAYMENT_SENDER = "sender";
+	public static final String PAYMENT_NAME = "name";
+	
 	public static TransactionAdapter  adapter ;
 
 
@@ -40,7 +42,7 @@ public class Transactions extends Activity {
 		listView = (ListView) findViewById(R.id.trans_list);
 		text_title = (TextView) findViewById(R.id.trans_title);
 		text_month_year = (TextView) findViewById(R.id.trans_text_month_year);
-
+		context = getApplicationContext();
 
 		Constants.setTextViewFontStyle(getAssets(), this.text_title,this.text_month_year);
 
@@ -85,5 +87,5 @@ public class Transactions extends Activity {
 		getMenuInflater().inflate(R.menu.transactions, menu);
 		return true;
 	}
-
+	
 }

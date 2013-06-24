@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backdrop"
+    android:orientation="vertical"
+    tools:context=".NoteDetails" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_details_padding_bottom"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right"
+        android:paddingTop="@dimen/activity_details_padding_top" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3dp" >
+
+            <TextView
+                android:id="@+id/invoice_text_date_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="dd-mm-yyyy"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/invoice_text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/invoice_text_date_value"
+                android:text="Date : "
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/invoice_text_time_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignStart="@id/invoice_text_date_value"
+                android:layout_below="@id/invoice_text_date_value"
+                android:text="hh:mm  AM"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/invoice_text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/invoice_text_date"
+                android:layout_below="@id/invoice_text_date"
+                android:layout_toLeftOf="@id/invoice_text_time_value"
+                android:text="Time : "
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bg_rect_details"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/invoice_text_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Name :"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/invoice_text_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="ID:"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rect_details"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/invoice_text_invoice"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="INVOICE"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/invoice_text_amount"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="Net Amount : (amount)"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/invoice_text_more_details"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="(details)"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bottom_panel" />
+
+</LinearLayout>

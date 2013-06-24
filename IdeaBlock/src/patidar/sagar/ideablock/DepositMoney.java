@@ -2,10 +2,15 @@ package patidar.sagar.ideablock;
 
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Shader.TileMode;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -19,7 +24,7 @@ public class DepositMoney extends Activity {
 	private EditText edit_id ;
 	private Button button_deposite ;
 	private Spinner spin ;
-	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,10 +38,18 @@ public class DepositMoney extends Activity {
 		this.edit_pin = (EditText) findViewById(R.id.deposite_pin);
 		this.button_deposite = (Button) findViewById(R.id.deposite_button);
 		this.spin = (Spinner) findViewById(R.id.deposite_spinner_bank_name);
-		
 		Constants.setButtonFontStyle(getAssets(), this.button_deposite);
 		Constants.setEditTextFontStyle(getAssets(), this.edit_account,this.edit_amount,this.edit_id,this.edit_password,this.edit_pin);
-		//Constants.setTextViewFontStyle(getAssets(), this.text_title);
+		
+		LinearLayout lv_title = (LinearLayout) findViewById(R.id.deposit_layout_title);
+		LinearLayout lv_footer = (LinearLayout) findViewById(R.id.deposit_layout_footer);
+		BitmapDrawable bitmap_title = (BitmapDrawable) getResources().getDrawable(R.drawable.title_panel);
+		bitmap_title.setTileModeX(TileMode.REPEAT);
+		Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.footer_panel);
+		bitmap = Bitmap.createScaledBitmap(bitmap, lv_footer.getWidth(), lv_footer.getHeight(), false);
+		BitmapDrawable bitmap_footer = new BitmapDrawable(getResources(),bitmap);
+		//lv_title.setBackgroundDrawable(bitmap_title);
+		lv_footer.setBackgroundDrawable(bitmap_footer);
 		
 	}
 

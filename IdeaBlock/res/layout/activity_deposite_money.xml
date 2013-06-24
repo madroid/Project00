@@ -3,45 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backdrop_deposit"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/app_padding_left_right"
-    android:paddingRight="@dimen/app_padding_left_right"
-    android:paddingTop="@dimen/common_box_margin_top_send_request_deposit"
     tools:context=".requestMoney" >
 
-  
-    <EditText
-        android:id="@+id/deposite_amount"
+    <LinearLayout
+        android:id="@+id/deposit_layout_title"
         android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_title_bar_height"
+        android:background="@drawable/bitmap_background_title_panel"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:hint="Amount to deposit"
-        android:inputType="number"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
+        android:background="@drawable/bitmap_background_header_panel"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/deposit_image_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/header_image_deposit" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:orientation="horizontal" >
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bitmap_background_body_panel"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right" >
 
         <EditText
-            android:id="@+id/deposite_accountNo"
-            android:layout_width="0dp"
+            android:id="@+id/deposite_amount"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
-            android:layout_weight="2"
-            android:background="@drawable/shape_edittext_final_left"
-            android:hint="Account No."
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:layout_marginTop="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:hint="Amount to deposit"
             android:inputType="number"
             android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
             android:paddingLeft="@dimen/shape_edittext_padding_left_right"
@@ -49,77 +55,107 @@
             android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
             android:singleLine="true" />
 
-        <Spinner
-            android:id="@+id/deposite_spinner_bank_name"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_edittext_final_right"
-            android:entries="@array/deposite_array_bank_name"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/deposite_accountNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_weight="2"
+                android:background="@drawable/shape_edittext_final_left"
+                android:hint="Account No."
+                android:inputType="number"
+                android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+                android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+                android:paddingRight="@dimen/shape_edittext_padding_left_right"
+                android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+                android:singleLine="true" />
+
+            <Spinner
+                android:id="@+id/deposite_spinner_bank_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_edittext_final_right"
+                android:entries="@array/deposite_array_bank_name"
+                android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+                android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+                android:paddingRight="@dimen/shape_edittext_padding_left_right"
+                android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+                android:prompt="@string/deposite_bank_prompt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/deposite_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_weight="2"
+                android:background="@drawable/shape_edittext_final_left"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+                android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+                android:paddingRight="@dimen/shape_edittext_padding_left_right"
+                android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/deposite_pin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_edittext_final_right"
+                android:hint="PIN"
+                android:inputType="numberPassword"
+                android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+                android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+                android:paddingRight="@dimen/shape_edittext_padding_left_right"
+                android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/deposite_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:ellipsize="middle"
+            android:hint="ID: 9899637620 (self)"
             android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
             android:paddingLeft="@dimen/shape_edittext_padding_left_right"
             android:paddingRight="@dimen/shape_edittext_padding_left_right"
             android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-            android:prompt="@string/deposite_bank_prompt" />
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/deposite_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deposite" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/deposit_layout_footer"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:orientation="horizontal" >
+        android:layout_height="@dimen/footer_panel_height"
+        android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/deposite_password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
-            android:layout_weight="2"
-            android:background="@drawable/shape_edittext_final_left"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-            android:paddingRight="@dimen/shape_edittext_padding_left_right"
-            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-            android:singleLine="true" />
-
-        <EditText
-            android:id="@+id/deposite_pin"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_edittext_final_right"
-            android:hint="PIN"
-            android:inputType="numberPassword"
-            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-            android:paddingRight="@dimen/shape_edittext_padding_left_right"
-            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-            android:singleLine="true" />
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/deposite_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:ellipsize="middle"
-        android:hint="ID: 9899637620 (self)"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
-
-    <Button
-        android:id="@+id/deposite_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Deposite" />
 
 </LinearLayout>

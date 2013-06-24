@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,10 +24,13 @@ public class TransactionDetails extends Activity {
 	private TextView text_net_amount;
 	private TextView text_more_details;
 	
-	private ImageButton button_left;
-	private ImageButton button_right ;
+	private ImageView button_left;
+	private ImageView button_right ;
 	
-	private static int position ; 
+	private static int position ;
+	private boolean isLeftTriggered  = false;
+	private boolean isRightTriggered  = false;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +47,8 @@ public class TransactionDetails extends Activity {
 		this.text_time = (TextView) findViewById(R.id.trans_details_text_time);
 		this.text_time_value = (TextView) findViewById(R.id.trans_details_text_time_value);
 		
-		this.button_left = (ImageButton) findViewById(R.id.trans_details_button_left);
-		this.button_right = (ImageButton) findViewById(R.id.trans_details_button_right);
+		this.button_left = (ImageView) findViewById(R.id.trans_details_button_left);
+		this.button_right = (ImageView) findViewById(R.id.trans_details_button_right);
 		
 		Constants.setTextViewFontStyle(getAssets(), this.text_date,this.text_date_value,this.text_id,
 				this.text_invoice_title,this.text_more_details,this.text_name,this.text_name,this.text_net_amount,
@@ -59,7 +63,13 @@ public class TransactionDetails extends Activity {
 		this.text_id.setText("ID : "+item.get(Transactions.PAYMENT_ID));
 		this.text_time_value.setText(item.get(Transactions.PAYMENT_TIME));
 		this.text_net_amount.setText("Net Amount : "+item.get(Transactions.PAYMENT_AMOUNT));
-		this.text_name.setText("Name : (Sender's/Receiver's name)");
+		
+		if(Integer.parseInt(item.get(Transactions.PAYMENT_SENDER)) == 1){
+			this.text_name.setText("Sender's name : "+item.get(Transactions.PAYMENT_NAME));
+		}
+		else{
+			this.text_name.setText("Receiver's name : "+item.get(Transactions.PAYMENT_NAME));
+		}
 		
 		button_left.setOnClickListener(new View.OnClickListener() {
 			
@@ -76,8 +86,9 @@ public class TransactionDetails extends Activity {
 					text_net_amount.setText("Net Amount : "+prevItem.get(Transactions.PAYMENT_AMOUNT));
 					text_name.setText("Name : (Sender's/Receiver's name)");
 				}
-				else{
+				else if(prev<0 && !isLeftTriggered){
 					Toast.makeText(TransactionDetails.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
+					isLeftTriggered = true ;
 				}
 			}
 		});
@@ -96,8 +107,9 @@ public class TransactionDetails extends Activity {
 					text_time_value.setText(nextItem.get(Transactions.PAYMENT_TIME));
 					text_net_amount.setText("Net Amount : "+nextItem.get(Transactions.PAYMENT_AMOUNT));
 					text_name.setText("Name : (Sender's/Receiver's name)");				}
-				else{
+				else if(next>=TransactionAdapter.data_list.size() && !isRightTriggered){
 					Toast.makeText(TransactionDetails.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
+					isRightTriggered = true ;
 				}
 			}
 		});		

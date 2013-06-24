@@ -20,6 +20,7 @@
 	<dimen name="common_box_padding_top_bottom_contacts">16dp</dimen>
 	<dimen name="common_box_margin_top_send_request_deposit">167dp</dimen>
 	<dimen name="common_element_padding_top_send_request_deposit">20dp</dimen>
+	<dimen name="common_title_bar_height">70dp</dimen>
 	<dimen name="common_divider_height">2dp</dimen>
 	<dimen name="common_box_height">107dp</dimen>
 	<!-- Send Money Dimenstions -->
@@ -57,9 +58,12 @@
 	<!-- Home screen dimensions -->
 	<dimen name="home_user_name_balance_font_size">17sp</dimen>
 	<dimen name="home_user_id_font_size">15sp</dimen>
+	
 	<dimen name="home_logo_bar_height">70dp</dimen>
 	<dimen name="home_user_name_padding_left_right">15dp</dimen>
 	
+	<!-- Activity deposite -->
+	<dimen name="footer_panel_height">40dp</dimen>
 	
 	
 </resources>
