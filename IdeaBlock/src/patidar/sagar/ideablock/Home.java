@@ -1,12 +1,22 @@
 package patidar.sagar.ideablock;
 
+import static patidar.sagar.ideablock.Constants.EXTRA_MESSAGE;
+import static patidar.sagar.ideablock.Constants.DISPLAY_MESSAGE_ACTION;
+import static patidar.sagar.ideablock.Constants.SENDER_ID;
+import com.google.android.gcm.GCMRegistrar;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Home extends Activity {
@@ -21,14 +31,22 @@ public class Home extends Activity {
 	ImageView myNotes ;
 	ImageView aroundMe ;
 
-	private TextView text_name;
-	private TextView text_id;
-	private TextView text_money;
+	public static TextView text_name;
+	private static TextView text_id;
+	public static TextView text_money;
+	
 	public static String USER_ID  = "";
+	private static int USER_BALANCE = 0;
+	
+	private AsyncTask<Void, Void, Void> serverTask ;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		GCMRegistrar.checkManifest(this);
+		GCMRegistrar.checkDevice(this);
+
 		setContentView(R.layout.activity_home);
 
 		sendMoney = (ImageView) findViewById(R.id.image_sendMoney);
@@ -47,11 +65,41 @@ public class Home extends Activity {
 
 		Constants.setTextViewFontStyle(getAssets(), this.text_id,this.text_money,this.text_name);
 
+		registerReceiver(mHandleMessageReceiver, new IntentFilter(
+				DISPLAY_MESSAGE_ACTION));
+
+		String regId = GCMRegistrar.getRegistrationId(this);
+		if (regId.equals("")) {
+			GCMRegistrar.register(this, SENDER_ID);
+			regId  = GCMRegistrar.getRegistrationId(this);
+		}
+		final String reg_id = regId ;
+		Log.d("HOME.JAVA REG ID", reg_id);
+			serverTask = new AsyncTask<Void, Void, Void>(){
+				ServerUtilities server = null;
+				@Override
+				protected Void doInBackground(Void... params) {
+					server = new ServerUtilities();
+					server.register(Home.this, USER_ID, reg_id);
+					return null;
+				}
+
+				@Override
+				protected void onPostExecute(Void result) {
+					serverTask = null;
+					server = null ;
+				}
+			};
+			serverTask.execute();
+
 		Intent i = getIntent();
 		text_name.setText(i.getStringExtra("user_name"));
 		text_id.setText(i.getStringExtra("user_id"));
-		text_money.setText("Rs. "+i.getStringExtra("user_balance"));
+		
 		USER_ID = i.getStringExtra("user_id");
+		USER_BALANCE = Integer.parseInt(i.getStringExtra("user_balance"));
+		text_money.setText("Rs. "+USER_BALANCE);
+		
 		sendMoney.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -88,7 +136,7 @@ public class Home extends Activity {
 					Transactions.adapter.resetFilter();
 				}
 				startActivity(intent);
-
+				overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			}
 		});
 
@@ -101,7 +149,7 @@ public class Home extends Activity {
 					Contacts.adapter.resetFilter();
 				}
 				startActivity(intent);
-				
+
 			}
 		});
 
@@ -124,14 +172,54 @@ public class Home extends Activity {
 				startActivity(intent);
 			}
 		});
+		
 
 	}
+
+	/**
+	 * Receiving push messages
+	 * */
+	private final BroadcastReceiver mHandleMessageReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String newMessage = intent.getExtras().getString(EXTRA_MESSAGE);
+			Log.d("NEW MESSAGE", newMessage);
+			Toast.makeText(Home.this, "Receiver", Toast.LENGTH_LONG).show();
+		}
+	};
+
+
+	@Override
+	protected void onDestroy() {
+		if (serverTask != null) {
+			serverTask.cancel(true);
+		}
+		try {
+			unregisterReceiver(mHandleMessageReceiver);
+			GCMRegistrar.onDestroy(this);
+		} catch (Exception e) {
+			Log.e("UnRegister Receiver Error", "> " + e.getMessage());
+		}
+		super.onDestroy();
+	}
+
+
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_home, menu);
 		return true;
+	}
+
+	public static void setBalance(int bal){
+		USER_BALANCE = bal ;
+		text_money.setText("Rs. "+USER_BALANCE);
+	}
+	
+	public static int getBalance(){
+		return USER_BALANCE ;
 	}
 
 }

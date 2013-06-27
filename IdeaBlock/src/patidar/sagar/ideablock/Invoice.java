@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.widget.TextView;
 
@@ -55,6 +56,15 @@ public class Invoice extends Activity {
 		}
 
 
+	}
+	
+	@Override
+	public void onBackPressed() {
+	    Intent intent = new Intent(Invoice.this,Home.class);
+	    if(Transactions.adapter!=null){
+			Transactions.adapter.resetFilter();
+		}
+	    startActivity(intent);
 	}
 
 	@Override

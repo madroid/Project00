@@ -61,14 +61,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/row_contacts_image_intra_distance"
-            android:src="@drawable/button_send" />
+            android:src="@drawable/button_contact_send" />
 
         <ImageView
             android:id="@+id/contacts_button_request"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/row_contacts_image_intra_distance"
-            android:src="@drawable/button_send" />
+            android:src="@drawable/button_contact_request" />
     </LinearLayout>
 
 </LinearLayout>

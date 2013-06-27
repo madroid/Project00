@@ -1,7 +1,5 @@
 package patidar.sagar.ideablock;
 
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +15,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -46,7 +43,7 @@ public class Login extends Activity {
 	private static HttpClient httpClient;
 	private static HttpPost httppost;
 	private Intent intent ;
-
+	public static String res ;
 	private static int success;
 
 	private JSONObject jObj ;
@@ -126,11 +123,11 @@ public class Login extends Activity {
 
 					ResponseHandler<String> responseHandler = new BasicResponseHandler();
 					final String httpResponse = httpClient.execute(httppost, responseHandler); //Constants.data ;//
-
+					res = httpResponse;
 					jObj = new JSONObject(httpResponse);
 					success = jObj.getInt("success");
 					String message = jObj.getString("message");
-					Log.d("LOGIN STATUS", message);
+					Log.d("LOGIN RESULT", message);
 
 					if(success==1){
 						final JSONObject contacts = jObj.getJSONObject("contacts_detail");
@@ -186,15 +183,16 @@ public class Login extends Activity {
 											hMap.put(Transactions.PAYMENT_YEAR, row.getString("year"));
 											hMap.put(Transactions.PAYMENT_SENDER, row.getString("sender"));
 											hMap.put(Transactions.PAYMENT_NAME, row.getString("name"));
+											hMap.put(Transactions.PAYMENT_ID, row.getString("id"));
 											
-											String id1 = row.getString("from_id");
-											String id2 = row.getString("to_id");
-											if(id1.equals(user_detail.getString("user_id"))){
-												hMap.put(Transactions.PAYMENT_ID, id2);
-											}
-											else{
-												hMap.put(Transactions.PAYMENT_ID, id1);
-											}
+//											String id1 = row.getString("from_id");
+//											String id2 = row.getString("to_id");
+//											if(id1.equals(user_detail.getString("user_id"))){
+//												hMap.put(Transactions.PAYMENT_ID, id2);
+//											}
+//											else{
+//												hMap.put(Transactions.PAYMENT_ID, id1);
+//											}
 											arrlistTransactions.add(hMap);
 										}
 									}
@@ -259,25 +257,25 @@ public class Login extends Activity {
 			}
 			else if(success==2 || success==3){
 				Log.d("LOGIN UNSUCCESSFUL", "FORGOT ID ? | FORGOT PASSWORD");
-//				AlertDialogManager.showAlertDialog(Login.this, "Unsuccessful Login", "Forgot ID? | Forgot Password",
-//						true);
-				toast.setText("Unsuccessful Login! Forgot ID or Password ?");
-				toast.show();
+				AlertDialogManager.showAlertDialog(Login.this, "Unsuccessful Login", "Forgot ID? | Forgot Password",
+						true);
+//				toast.setText("Unsuccessful Login! Forgot ID or Password ?");
+//				toast.show();
 			}
 			else if(success == 4){
 				AlertDialogManager.showAlertDialog(Login.this, "New User?", "Please Sign Up!", true);
-				toast.setText("New user? Please Sign up!");
-				toast.show();
+//				toast.setText("New user? Please Sign up!");
+//				toast.show();
 			}
 			else if(success == 5){
-//				Toast.makeText(Login.this, "Please fill up the fields!", Toast.LENGTH_LONG).show();
-				toast.setText("Please fill up the fields!");
-				toast.show();
+				Toast.makeText(Login.this, "Please fill up the fields!", Toast.LENGTH_LONG).show();
+//				toast.setText("Please fill up the fields!");
+//				toast.show();
 			}
 			else if(success == 6){
-//				Toast.makeText(Login.this, "Oops! Some error occurred in server connection. Make sure that you can access internet!", Toast.LENGTH_LONG).show();
-				toast.setText("Oops! Some error occurred in server connection. Make sure that you can access internet!");
-				toast.show();
+				Toast.makeText(Login.this, "Oops! Some error occurred in server connection. Make sure that you can access internet!", Toast.LENGTH_LONG).show();
+//				toast.setText("Oops! Some error occurred in server connection. Make sure that you can access internet!");
+//				toast.show();
 			}
 		}
 		

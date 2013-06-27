@@ -79,12 +79,11 @@ public class TransactionDetails extends Activity {
 				int prev = position -1 ;
 				if(prev>-1){
 					position-- ;
-					HashMap<String, String> prevItem = TransactionAdapter.data_list.get(prev);
-					text_date_value.setText(prevItem.get(Transactions.PAYMENT_DATE));
-					text_id.setText("ID : "+prevItem.get(Transactions.PAYMENT_ID));
-					text_time_value.setText(prevItem.get(Transactions.PAYMENT_TIME));
-					text_net_amount.setText("Net Amount : "+prevItem.get(Transactions.PAYMENT_AMOUNT));
-					text_name.setText("Name : (Sender's/Receiver's name)");
+					Intent intent = new Intent(TransactionDetails.this,TransactionDetails.class);
+					intent.putExtra("position", position);
+					startActivity(intent);
+					overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+					
 				}
 				else if(prev<0 && !isLeftTriggered){
 					Toast.makeText(TransactionDetails.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
@@ -101,12 +100,11 @@ public class TransactionDetails extends Activity {
 				int next = position +1 ;
 				if(next<TransactionAdapter.data_list.size()){
 					position++;
-					HashMap<String, String> nextItem = TransactionAdapter.data_list.get(next);
-					text_date_value.setText(nextItem.get(Transactions.PAYMENT_DATE));
-					text_id.setText("ID : "+nextItem.get(Transactions.PAYMENT_ID));
-					text_time_value.setText(nextItem.get(Transactions.PAYMENT_TIME));
-					text_net_amount.setText("Net Amount : "+nextItem.get(Transactions.PAYMENT_AMOUNT));
-					text_name.setText("Name : (Sender's/Receiver's name)");				}
+					Intent intent = new Intent(TransactionDetails.this,TransactionDetails.class);
+					intent.putExtra("position", position);
+					startActivity(intent);
+					overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+				}
 				else if(next>=TransactionAdapter.data_list.size() && !isRightTriggered){
 					Toast.makeText(TransactionDetails.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
 					isRightTriggered = true ;
@@ -114,6 +112,16 @@ public class TransactionDetails extends Activity {
 			}
 		});		
 
+	}
+	
+	@Override
+	public void onBackPressed() {
+	    Intent intent = new Intent(TransactionDetails.this,Transactions.class);
+	    if(Transactions.adapter!=null){
+			Transactions.adapter.resetFilter();
+		}
+	    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	    startActivity(intent);
 	}
 
 	@Override

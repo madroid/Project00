@@ -83,6 +83,7 @@ public class TransactionAdapter extends ArrayAdapter<HashMap<String, String>> {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				contxt.startActivity(intent);
+				contxt.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 			}
 		});
 		return convertView;
@@ -93,8 +94,6 @@ public class TransactionAdapter extends ArrayAdapter<HashMap<String, String>> {
         data_list.clear();
         int year2  = Integer.parseInt(year);
             for (HashMap hmap : original_data_list) {
-            	Log.d("YEAR", ""+hmap.get("year"));
-            	Log.d("month", ""+hmap.get("month"));
             	int tempYear = Integer.parseInt(hmap.get("year").toString());
             	int tempMonth = Integer.parseInt(hmap.get("month").toString());
             	if(tempYear>year2){

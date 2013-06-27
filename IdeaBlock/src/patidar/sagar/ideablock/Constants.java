@@ -1,7 +1,16 @@
 package patidar.sagar.ideablock;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Shader;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.util.DisplayMetrics;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -17,7 +26,7 @@ public class Constants {
 	
 	public static final String MAP_API_KEY = "AIzaSyBJk0SiNINYMomeS5t2g33yCT6POne2j78";
 	
-	public static final String URL_SERVER_PROJECT = "http://10.0.2.2/iServer/idea/Practice/";
+	public static final String URL_SERVER_PROJECT = "http://yosagar.5gbfree.com/iServer/idea/Practice/";
 
 	public static final String CUSTOM_FONT = "fonts/Futura Medium.ttf";
 	
@@ -44,13 +53,43 @@ public class Constants {
 		}
 	}
 	
-	public static void setSpinnerFontStyle(AssetManager asset,Spinner...params ){
-		Typeface tf = Typeface.createFromAsset(asset, CUSTOM_FONT);
-		for(Spinner v: params){
-			
-		}
-	}
+	/**
+	 * Common Utilities for Push Notifications
+	 */
 	
+	public static String SENDER_ID = "358194037121";
+
+	public static final String DISPLAY_MESSAGE_ACTION =
+			"patidar.sagar.ideablock.DISPLAY_MESSAGE";
+
+	public static final String EXTRA_MESSAGE = "message";
+
+	 static void displayMessage(Context context, String message) {
+	        Intent intent = new Intent(DISPLAY_MESSAGE_ACTION);
+	        intent.putExtra(EXTRA_MESSAGE, message);
+	        context.sendBroadcast(intent);
+	    }
+
+	
+	 
+	 /**
+	  * Repeating background image in x direction and stretching in y-direction
+	  */
+
+	public static Drawable getRepeatingBackgroundX(Activity activity, int drawableImage, int height){
+
+	        BitmapFactory.Options options = new BitmapFactory.Options();
+	        options.inScaled=true;
+
+	        Bitmap center_bmp = BitmapFactory.decodeResource(activity.getResources(), drawableImage, options);
+	        center_bmp.setDensity(Bitmap.DENSITY_NONE);
+	        center_bmp=Bitmap.createScaledBitmap(center_bmp,  center_bmp.getWidth(), height ,true);
+
+	        BitmapDrawable center_drawable = new BitmapDrawable(activity.getResources(),center_bmp);
+	        center_drawable.setTileModeX(Shader.TileMode.REPEAT);
+
+	        return center_drawable;
+    }
 
 	
 }

@@ -6,16 +6,23 @@
     android:background="@drawable/backdrop_request"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/app_padding_left_right"
-    android:paddingRight="@dimen/app_padding_left_right"
-    android:paddingTop="@dimen/common_title_bar_height"
     tools:context=".requestMoney" >
 
     <LinearLayout
+        android:id="@+id/request_layout_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_title_bar_height"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/request_layout_header"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/common_box_height"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/common_header_padding_top_bottom"
+        android:paddingTop="@dimen/common_header_padding_top_bottom" >
 
         <ImageView
             android:id="@+id/request_image_header"
@@ -24,70 +31,97 @@
             android:src="@drawable/header_image_request" />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/request_receiverID"
+    <LinearLayout
+        android:id="@+id/request_layout_body"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:hint="Sender&apos;s ID/E-mail /Ph. no."
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right" >
 
-    <EditText
-        android:id="@+id/request_amount"
+        <EditText
+            android:id="@+id/request_receiverID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:layout_marginTop="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:hint="Sender&apos;s ID/E-mail /Ph. no."
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/request_amount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:hint="Requested Amount"
+            android:inputType="number"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/request_pin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:hint="PIN"
+            android:inputType="numberPassword"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/request_comment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:hint="Comments!"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/request_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_request"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/request_layout_footer"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:hint="Requested Amount"
-        android:inputType="number"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
+        android:layout_height="@dimen/common_footer_panel_height"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/common_fotter_padding_left_right"
+        android:paddingTop="@dimen/common_fotter_padding_left_right" >
 
-    <EditText
-        android:id="@+id/request_pin"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:hint="PIN"
-        android:inputType="numberPassword"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
-
-    <EditText
-        android:id="@+id/request_comment"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:hint="Comments!"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
-
-    <Button
-        android:id="@+id/request_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_edittext_final"
-        android:text="Request" />
+        <ImageView
+            android:id="@+id/request_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/button_settings" />
+    </RelativeLayout>
 
 </LinearLayout>

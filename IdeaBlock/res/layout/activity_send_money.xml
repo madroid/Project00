@@ -3,19 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/backdrop_send"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/app_padding_left_right"
-    android:paddingRight="@dimen/app_padding_left_right"
-    android:paddingTop="@dimen/common_title_bar_height"
     tools:context=".SendMoney" >
 
     <LinearLayout
+        android:id="@+id/send_layout_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_title_bar_height"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/send_layout_header"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/common_box_height"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/common_header_padding_top_bottom"
+        android:paddingTop="@dimen/common_header_padding_top_bottom" >
 
         <ImageView
             android:id="@+id/send_image_header"
@@ -23,74 +29,102 @@
             android:layout_height="wrap_content"
             android:src="@drawable/header_image_send" />
     </LinearLayout>
-    
-    <EditText
-        android:id="@+id/send_receiverID"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:ellipsize="middle"
-        android:hint="Receiver&apos;s ID/E-mail /Ph. no."
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
 
-    <EditText
-        android:id="@+id/send_amount"
+    <LinearLayout
+        android:id="@+id/send_layout_body"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:ellipsize="middle"
-        android:hint="Amount to send"
-        android:inputType="number"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right" >
 
-    <EditText
-        android:id="@+id/send_pin"
+        <EditText
+            android:id="@+id/send_receiverID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:layout_marginTop="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:ellipsize="middle"
+            android:hint="Receiver&apos;s ID/E-mail /Ph. no."
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/send_amount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:ellipsize="middle"
+            android:hint="Amount to send"
+            android:inputType="number"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/send_pin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:ellipsize="middle"
+            android:hint="PIN"
+            android:inputType="numberPassword"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/send_comment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
+            android:background="@drawable/shape_edittext_final"
+            android:ellipsize="middle"
+            android:hint="Comments!"
+            android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
+            android:paddingLeft="@dimen/shape_edittext_padding_left_right"
+            android:paddingRight="@dimen/shape_edittext_padding_left_right"
+            android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_send" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/send_layout_footer"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:ellipsize="middle"
-        android:hint="PIN"
-        android:inputType="numberPassword"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
+        android:layout_height="@dimen/common_footer_panel_height"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/common_fotter_padding_left_right"
+        android:paddingTop="@dimen/common_fotter_padding_left_right" >
 
-    <EditText
-        android:id="@+id/send_comment"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
-        android:background="@drawable/shape_edittext_final"
-        android:ellipsize="middle"
-        android:hint="Comments!"
-        android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
-        android:paddingLeft="@dimen/shape_edittext_padding_left_right"
-        android:paddingRight="@dimen/shape_edittext_padding_left_right"
-        android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
-        android:singleLine="true" />
-
-    <ImageButton
-        android:id="@+id/send_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send" />
+        <ImageView
+            android:id="@+id/send_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/button_settings" />
+    </RelativeLayout>
 
 </LinearLayout>

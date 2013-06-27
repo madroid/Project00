@@ -11,29 +11,30 @@
         android:id="@+id/deposit_layout_title"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/common_title_bar_height"
-        android:background="@drawable/bitmap_background_title_panel"
         android:orientation="horizontal" >
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/deposit_layout_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bitmap_background_header_panel"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/common_header_padding_top_bottom"
+        android:paddingTop="@dimen/common_header_padding_top_bottom" >
 
         <ImageView
             android:id="@+id/deposit_image_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/header_image_deposit" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/deposit_layout_body"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/bitmap_background_body_panel"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="@dimen/app_padding_left_right"
@@ -143,19 +144,28 @@
             android:paddingTop="@dimen/shape_edittext_padding_top_bottom"
             android:singleLine="true" />
 
-        <Button
+        <ImageView
             android:id="@+id/deposite_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Deposite" />
+            android:src="@drawable/button_deposit" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/deposit_layout_footer"
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/footer_panel_height"
-        android:orientation="vertical" >
+        android:layout_height="@dimen/common_footer_panel_height"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/common_fotter_padding_left_right"
+        android:paddingTop="@dimen/common_fotter_padding_left_right" >
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/deposit_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/button_settings" />
+    </RelativeLayout>
 
 </LinearLayout>

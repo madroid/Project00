@@ -29,29 +29,41 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class SendMoney extends Activity {
 
-	private TextView text_title ;
 	private EditText edit_receiver ;
 	private EditText edit_amount ;
 	private EditText edit_pin ;
 	private EditText edit_comment ;
-	private ImageView button_send;
-	private ImageView image_header ;
+	private ImageView image_send;
+	private ImageView image_settings ;
 	private ConnectionDetector cd ;
 	private Toast toast ;
 	private ProgressDialog pDialog;
 	private JSONObject jObj;
 	private int success ;
+
 	private String SEND_AMOUNT = "amount";
 	private String SEND_TO_ID = "to_id";
 	private String SEND_PIN = "pin";
 	private String SEND_COMMENT = "comment";
 	private String SEND_FROM_ID = "from_id";
+	
+	private int amount = 0;
+	
+	//For bitmap backgrounds
+	private LinearLayout layout_title;
+	private LinearLayout layout_body;
+	private LinearLayout layout_header;
+	private RelativeLayout layout_footer;
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,12 +77,18 @@ public class SendMoney extends Activity {
 		this.edit_comment = (EditText) findViewById(R.id.send_comment);
 		this.edit_pin = (EditText) findViewById(R.id.send_pin);
 		this.edit_receiver = (EditText) findViewById(R.id.send_receiverID);
-		this.button_send = (ImageView) findViewById(R.id.send_button);
+		this.image_send = (ImageView) findViewById(R.id.send_button);
+		this.image_settings = (ImageView) findViewById(R.id.send_settings);
 		//this.image_header = (ImageView) findViewById(R.id.image_sendMoney_header);
 		
 		Constants.setEditTextFontStyle(getAssets(), this.edit_amount,this.edit_comment,this.edit_pin,this.edit_receiver);
-		//Constants.setTextViewFontStyle(getAssets(), this.text_title);
-		
+
+		//various layouts
+		this.layout_body = (LinearLayout) findViewById(R.id.send_layout_body);
+		this.layout_title = (LinearLayout) findViewById(R.id.send_layout_title);
+		this.layout_header =  (LinearLayout) findViewById(R.id.send_layout_header);
+		this.layout_footer = (RelativeLayout) findViewById(R.id.send_layout_footer);
+
 		
 		Intent intent = getIntent();
 		boolean check  = intent.getBooleanExtra("check", false);
@@ -79,28 +97,56 @@ public class SendMoney extends Activity {
 			edit_amount.requestFocus();
 		}
 		
-		button_send.setOnClickListener(new View.OnClickListener() {
+		image_send.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if(edit_amount.getText().toString().trim().equals("") || edit_pin.getText().toString().trim().equals("") || 
 						edit_receiver.getText().toString().trim().equals("")){
-					toast.setText("Please fill up the required fields");
-					toast.show();
+//					toast.setText("Please fill up the required fields");
+//					toast.show();
+					Toast.makeText(getApplicationContext(), "Please fill up the required fields", Toast.LENGTH_LONG).show();
 				}
 				else if(!cd.isConnectingToInternet()){
-					toast.setText("Please connect to a working internet connection.");
-					toast.show();
+//					toast.setText("Please connect to a working internet connection.");
+//					toast.show();
+					Toast.makeText(getApplicationContext(), "Please connect to a working internet connection.", Toast.LENGTH_LONG).show();
 				}
 				else{
-					new proceedTransaction().execute();
+					amount = Integer.parseInt(edit_amount.getText().toString());
+					if(amount<=Home.getBalance()){
+						new proceedTransaction().execute();
+					}
+					else{
+						AlertDialogManager.showAlertDialog(SendMoney.this, "No sufficient balance", "You don't have sufficient balance. Please recharge you account first.", true);
+					}
 				}
 			}
 		});
 		
+		this.image_settings.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(SendMoney.this, "Settings for Send Money is not implemented yet! Inconvenience caused is deeply regretted.", Toast.LENGTH_LONG).show();
+			}
+		});
 		
 	}
+	
+	@SuppressWarnings("deprecation")
+	@Override
+	 public void onWindowFocusChanged(boolean hasFocus){
+		 super.onWindowFocusChanged(hasFocus);
+		 Log.d("DEPOSIT DEBUG", "height: "+layout_title.getHeight());
+		 //Setting Background for various layouts
+		 this.layout_body.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.body_panel, layout_body.getHeight()));
+		 this.layout_title.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.title_panel, layout_title.getHeight()));
+		 this.layout_footer.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.footer_panel, layout_footer.getHeight()));
+   		 this.layout_header.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.header_panel, layout_header.getHeight()));
+	 }
+
 
 	
 	class proceedTransaction extends AsyncTask<String, String, String>{
@@ -116,6 +162,7 @@ public class SendMoney extends Activity {
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
+			
 
 		}
 
@@ -123,7 +170,7 @@ public class SendMoney extends Activity {
 		protected String doInBackground(String... params) {
 
 				List<NameValuePair> param = new ArrayList<NameValuePair>();
-				param.add(new BasicNameValuePair(SEND_AMOUNT, edit_amount.getText().toString()));
+				param.add(new BasicNameValuePair(SEND_AMOUNT, ""+amount));
 				param.add(new BasicNameValuePair(SEND_COMMENT, edit_comment.getText().toString()));
 				param.add(new BasicNameValuePair(SEND_FROM_ID, Home.USER_ID));
 				param.add(new BasicNameValuePair(SEND_PIN, edit_pin.getText().toString()));
@@ -143,9 +190,12 @@ public class SendMoney extends Activity {
 					Log.d("SEND MONEY MESSAGE", jObj.getString("message"));
 				}
 				catch(Exception e){
+					Toast.makeText(getApplicationContext(), "Oops! Some error occurred. Please make sure that you are connected to a working internet connection.", Toast.LENGTH_LONG).show();
 					e.printStackTrace();
-					toast.setText("Oops! Some error occurred. Transaction failed");
-					toast.show();
+					
+//					toast.setText("Oops! Some error occurred. Transaction failed");
+//					toast.show();
+
 				}
 			return null;
 		}
@@ -161,6 +211,7 @@ public class SendMoney extends Activity {
 				SendMoney.this.edit_comment.setHint("Comments!");
 				SendMoney.this.edit_pin.setHint("PIN");
 				SendMoney.this.edit_amount.setHint("amount");
+				
 				HashMap<String, String> hmap = new HashMap<String, String>();
 				try {
 					 JSONObject jDetails = jObj.getJSONObject("details_transaction");
@@ -180,7 +231,7 @@ public class SendMoney extends Activity {
 						hmap.put(Transactions.PAYMENT_ID, id1);
 					}
 					Login.arrlistTransactions.add(0, hmap);
-					
+					Home.setBalance(Home.getBalance()-amount);
 				}
 				catch (JSONException e) {
 					e.printStackTrace();
