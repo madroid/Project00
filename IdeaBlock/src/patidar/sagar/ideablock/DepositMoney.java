@@ -24,14 +24,12 @@ public class DepositMoney extends Activity {
 	private EditText edit_pin;
 	private EditText edit_id ;
 	private ImageView image_deposite ;
-	private ImageView image_settings;
 	private Spinner spin ;
 	
 	//For bitmap backgrounds
 	private LinearLayout layout_title;
-	private LinearLayout layout_body;
 	private LinearLayout layout_header;
-	private RelativeLayout layout_footer;
+	private LinearLayout layout_body;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -46,14 +44,12 @@ public class DepositMoney extends Activity {
 		this.edit_id = (EditText) findViewById(R.id.deposite_id);
 		this.edit_pin = (EditText) findViewById(R.id.deposite_pin);
 		this.image_deposite = (ImageView) findViewById(R.id.deposite_button);
-		this.image_settings = (ImageView) findViewById(R.id.deposit_settings);
 		this.spin = (Spinner) findViewById(R.id.deposite_spinner_bank_name);
 		
 		//various layouts
 		this.layout_body = (LinearLayout) findViewById(R.id.deposit_layout_body);
 		this.layout_title = (LinearLayout) findViewById(R.id.deposit_layout_title);
 		this.layout_header =  (LinearLayout) findViewById(R.id.deposit_layout_header);
-		this.layout_footer = (RelativeLayout) findViewById(R.id.deposit_layout_footer);
 		
 		//Setting Custom Fonts
 		Constants.setEditTextFontStyle(getAssets(), this.edit_account,this.edit_amount,this.edit_id,this.edit_password,this.edit_pin);
@@ -66,15 +62,6 @@ public class DepositMoney extends Activity {
 			}
 		});
 		
-		this.image_settings.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(DepositMoney.this, "Settings for Deposit Money is not implemented yet! Inconvenience caused is deeply regretted.", Toast.LENGTH_LONG).show();
-			}
-		});
-		
-		
 		
 	}
 	
@@ -82,13 +69,9 @@ public class DepositMoney extends Activity {
 	@Override
 	 public void onWindowFocusChanged(boolean hasFocus){
 		 super.onWindowFocusChanged(hasFocus);
-		 Log.d("DEPOSIT DEBUG", "height: "+layout_title.getHeight());
 		 //Setting Background for various layouts
-		 this.layout_body.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.body_panel, layout_body.getHeight()));
-		 this.layout_title.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.title_panel, layout_title.getHeight()));
-		 this.layout_footer.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.footer_panel, layout_footer.getHeight()));
-   		 this.layout_header.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.header_panel, layout_header.getHeight()));
-	 }
+		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.layout_body);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

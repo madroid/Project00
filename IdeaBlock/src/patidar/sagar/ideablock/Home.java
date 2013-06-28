@@ -15,6 +15,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,11 @@ public class Home extends Activity {
 	ImageView merchants ;
 	ImageView myNotes ;
 	ImageView aroundMe ;
+	
+	//For bitmap backgrounds
+	private LinearLayout layout_title;
+	private LinearLayout layout_body;
+	private LinearLayout layout_header;
 
 	public static TextView text_name;
 	private static TextView text_id;
@@ -62,6 +69,11 @@ public class Home extends Activity {
 		this.text_id = (TextView) findViewById(R.id.userID);
 		this.text_name = (TextView) findViewById(R.id.username);
 		this.text_money = (TextView) findViewById(R.id.balanceAmount);
+
+		//various layouts
+		this.layout_body = (LinearLayout) findViewById(R.id.home_layout_body);
+		this.layout_title = (LinearLayout) findViewById(R.id.home_layout_title);
+		this.layout_header =  (LinearLayout) findViewById(R.id.home_layout_header);
 
 		Constants.setTextViewFontStyle(getAssets(), this.text_id,this.text_money,this.text_name);
 
@@ -173,6 +185,26 @@ public class Home extends Activity {
 			}
 		});
 		
+		instantHelp.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Toast.makeText(Home.this, "Not implemented yet!", Toast.LENGTH_LONG).show();
+			}
+		});
+		
+		merchants.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Toast.makeText(Home.this, "Not implemented yet!", Toast.LENGTH_LONG).show();
+			}
+		});
+		
+		
+		
 
 	}
 
@@ -203,8 +235,16 @@ public class Home extends Activity {
 		super.onDestroy();
 	}
 
+	@SuppressWarnings("deprecation")
+	@Override
+	 public void onWindowFocusChanged(boolean hasFocus){
+		 super.onWindowFocusChanged(hasFocus);
+		 //Setting Background for various layouts
+		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.layout_body);
+	}
 
-
+	
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

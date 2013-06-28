@@ -8,17 +8,19 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class Contacts extends Activity {
 
 	private ListView listView ;
-
 	private TextView text_title;
-	
 	private EditText text_search ;
 	private Button button_add_contact;
+	
+	private LinearLayout layout_title;
+	private LinearLayout layout_header;
 	
 	public static final String CONTACT_NAME = "name";
 	public static final String CONTACT_ID = "id";
@@ -32,9 +34,11 @@ public class Contacts extends Activity {
 		
 		this.text_title = (TextView) findViewById(R.id.contacts_text_title);
 		text_search = (EditText) findViewById(R.id.contacts_edit_search);
-		
 		button_add_contact = (Button) findViewById(R.id.contacts_button_add);
 		listView = (ListView) findViewById(R.id.contacts_list);
+		
+		this.layout_title = (LinearLayout) findViewById(R.id.contacts_layout_title);
+		this.layout_header =  (LinearLayout) findViewById(R.id.contacts_layout_header);
 		
 		Constants.setEditTextFontStyle(getAssets(), this.text_search);
 		Constants.setTextViewFontStyle(getAssets(), this.text_title);
@@ -62,6 +66,15 @@ public class Contacts extends Activity {
 		});
 		
 	}
+	
+	@SuppressWarnings("deprecation")
+	@Override
+	 public void onWindowFocusChanged(boolean hasFocus){
+		 super.onWindowFocusChanged(hasFocus);
+		 //Setting Background for various layouts
+		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.listView);
+	}
+
 
 
 	@Override

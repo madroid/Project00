@@ -1,69 +1,67 @@
 <resources>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
 	
 	<!-- activity_details.xml -->
-	<dimen name="activity_details_padding_left">25dp</dimen>
-	<dimen name="activity_details_padding_right">25dp</dimen>
-	<dimen name="activity_details_padding_top">20dp</dimen>
-	<dimen name="activity_details_padding_bottom">10dp</dimen>
-	
-	
-	<!-- Some font sizes -->
-	
+	<dimen name="activity_details_padding_left">12dp</dimen>
+	<dimen name="activity_details_padding_right">12dp</dimen>
+	<dimen name="activity_details_padding_top">10dp</dimen>
+	<dimen name="activity_details_padding_bottom">5dp</dimen>
 	
 	<!-- Common dimensions for title and that background container  -->
-	<dimen name="common_title_padding_top_bottom">20dp</dimen>
-	<dimen name="common_box_padding_top_bottom_send_money">16dp</dimen>
-	<dimen name="common_box_padding_top_bottom_contacts">16dp</dimen>
-	<dimen name="common_box_margin_top_send_request_deposit">167dp</dimen>
-	<dimen name="common_element_padding_top_send_request_deposit">20dp</dimen>
-	<dimen name="common_title_bar_height">70dp</dimen>
-	<dimen name="common_divider_height">2dp</dimen>
-	<dimen name="common_footer_panel_height">45dp</dimen>
-	<dimen name="common_box_height">107dp</dimen>
-	<dimen name="common_header_padding_top_bottom">8dp</dimen>
-	<dimen name="common_fotter_padding_left_right">10dp</dimen>
+	<dimen name="common_title_padding_top_bottom">10dp</dimen>
+	<dimen name="common_box_padding_top_bottom_send_money">8dp</dimen>
+	<dimen name="common_box_padding_top_bottom_contacts">8dp</dimen>
+	<dimen name="common_box_margin_top_send_request_deposit">84dp</dimen>
+	<dimen name="common_element_padding_top_send_request_deposit">10dp</dimen>
+	<dimen name="common_title_bar_height">35dp</dimen>
+	<dimen name="common_divider_height">1dp</dimen>
+	<dimen name="common_footer_panel_height">40dp</dimen>
+	<dimen name="common_box_height">54dp</dimen>
+	<dimen name="common_header_padding_top_bottom">4dp</dimen>
+	<dimen name="common_fotter_padding_left_right">5dp</dimen>
 	<!-- Send Money Dimenstions -->
 	
 	
 	<!-- Edit text box properties -->
-	<dimen name="shape_edittext_corner_radius">10dp</dimen>
+	<dimen name="shape_edittext_corner_radius">5dp</dimen>
 	<dimen name="shape_edittext_corner_radius_zero">0dp</dimen>
-	<dimen name="shape_edittext_padding_left_right">10dp</dimen>
-	<dimen name="shape_edittext_padding_top_bottom">7dp</dimen>
-	<dimen name="shape_edittext_intra_distance">20dp</dimen>
+	<dimen name="shape_edittext_padding_left_right">5dp</dimen>
+	<dimen name="shape_edittext_padding_top_bottom">3dp</dimen>
+	<dimen name="shape_edittext_intra_distance">10dp</dimen>
+	<dimen name="shape_edittext_border_width">1dp</dimen>
 	
 	
 	<!-- Application dimensions -->
-	<dimen name="app_padding_left_right">30dp</dimen>
-	<dimen name="app_profile_border_width">5dp</dimen>
-	<dimen name="app_title_font_size">20sp</dimen>	
+	<dimen name="app_padding_left_right">15dp</dimen>
+	<dimen name="app_profile_border_width">2dp</dimen>
+	<dimen name="app_title_font_size">10sp</dimen>	
 	
 	<!-- row contacts dimensions -->
-	<dimen name="row_padding_top_bottom">8dp</dimen>
-	<dimen name="row_contacts_text_padding_top">5dp</dimen>
-	<dimen name="row_contacts_image_intra_distance">2dp</dimen>
-	<dimen name="row_contacts_elements_spacing">5dp</dimen>
+	<dimen name="row_padding_top_bottom">4dp</dimen>
+	<dimen name="row_contacts_text_padding_top">2dp</dimen>
+	<dimen name="row_contacts_image_intra_distance">1dp</dimen>
+	<dimen name="row_contacts_elements_spacing">2dp</dimen>
 	
 	<!-- row transaction dimensions -->
-	<dimen name="row_transaction_intra_distance">2dp</dimen>
-	<dimen name="row_transaction_text_id_size">15sp</dimen>
-	<dimen name="row_transaction_text_other_size">15sp</dimen>
-	<dimen name="row_transaction_text_spinner_intra_distance">8dp</dimen>
+	<dimen name="row_transaction_intra_distance">1dp</dimen>
+	<dimen name="row_transaction_text_id_size">8sp</dimen>
+	<dimen name="row_transaction_text_other_size">8sp</dimen>
+	<dimen name="row_transaction_text_spinner_intra_distance">4dp</dimen>
 	
 	<!-- row notes dimensions -->
-	<dimen name="row_note_text_size_subject">15sp</dimen>
-	<dimen name="row_note_text_size_content">15sp</dimen>
+	<dimen name="row_note_text_size_subject">8sp</dimen>
+	<dimen name="row_note_text_size_content">8sp</dimen>
 	
 	<!-- Home screen dimensions -->
 	<dimen name="home_user_name_balance_font_size">17sp</dimen>
 	<dimen name="home_user_id_font_size">15sp</dimen>
 	
-	<dimen name="home_logo_bar_height">70dp</dimen>
-	<dimen name="home_user_name_padding_left_right">15dp</dimen>
+	<dimen name="home_logo_bar_height">35dp</dimen>
+	<dimen name="home_user_name_padding_left_right">10dp</dimen>
+	<dimen name="home_header_top_bottom_padding">4dp</dimen>
 	
 	<!-- Activity deposite -->
 

@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,6 +20,9 @@ public class Transactions extends Activity {
 	private TextView text_month_year ;
 	private static Context context ;
 	private static ListView listView ;
+	
+	private LinearLayout layout_title;
+	private LinearLayout layout_header;
 
 	public static final String PAYMENT_ID = "trans_ID2";
 	public static final String PAYMENT_AMOUNT = "trans_amount2";
@@ -42,6 +46,10 @@ public class Transactions extends Activity {
 		listView = (ListView) findViewById(R.id.trans_list);
 		text_title = (TextView) findViewById(R.id.trans_title);
 		text_month_year = (TextView) findViewById(R.id.trans_text_month_year);
+		this.layout_title = (LinearLayout) findViewById(R.id.trans_layout_title);
+		this.layout_header =  (LinearLayout) findViewById(R.id.trans_layout_header);
+
+		
 		context = getApplicationContext();
 
 		Constants.setTextViewFontStyle(getAssets(), this.text_title,this.text_month_year);
@@ -80,6 +88,14 @@ public class Transactions extends Activity {
 
 		
 		adapter.resetFilter();
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Override
+	 public void onWindowFocusChanged(boolean hasFocus){
+		 super.onWindowFocusChanged(hasFocus);
+		 //Setting Background for various layouts
+		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.listView);
 	}
 
 	@Override

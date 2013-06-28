@@ -2,28 +2,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backdrop"
     android:orientation="vertical"
     tools:context=".Contacts" >
 
-    <TextView
-        android:id="@+id/contacts_text_title"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/contacts_layout_title"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:gravity="center"
         android:paddingBottom="@dimen/common_title_padding_top_bottom"
-        android:paddingTop="@dimen/common_title_padding_top_bottom"
-        android:text="@string/title_activity_contacts"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:paddingTop="@dimen/common_title_padding_top_bottom" >
+
+        <TextView
+            android:id="@+id/contacts_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title_activity_contacts"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="107dp"
+        android:id="@+id/contacts_layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/app_padding_left_right"
         android:layout_marginRight="@dimen/app_padding_left_right"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/common_header_padding_top_bottom"
+        android:paddingTop="@dimen/common_header_padding_top_bottom" >
 
         <EditText
             android:id="@+id/contacts_edit_search"
@@ -53,7 +63,6 @@
         android:id="@+id/contacts_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/shape_edittext_intra_distance"
         android:divider="@color/divider_color"
         android:dividerHeight="@dimen/common_divider_height"
         android:smoothScrollbar="true"
