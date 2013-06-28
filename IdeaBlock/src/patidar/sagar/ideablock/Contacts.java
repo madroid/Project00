@@ -21,6 +21,7 @@ public class Contacts extends Activity {
 	
 	private LinearLayout layout_title;
 	private LinearLayout layout_header;
+	private LinearLayout layout_body ;
 	
 	public static final String CONTACT_NAME = "name";
 	public static final String CONTACT_ID = "id";
@@ -39,6 +40,7 @@ public class Contacts extends Activity {
 		
 		this.layout_title = (LinearLayout) findViewById(R.id.contacts_layout_title);
 		this.layout_header =  (LinearLayout) findViewById(R.id.contacts_layout_header);
+		this.layout_body = (LinearLayout) findViewById(R.id.contacts_layout_body);
 		
 		Constants.setEditTextFontStyle(getAssets(), this.text_search);
 		Constants.setTextViewFontStyle(getAssets(), this.text_title);
@@ -72,7 +74,7 @@ public class Contacts extends Activity {
 	 public void onWindowFocusChanged(boolean hasFocus){
 		 super.onWindowFocusChanged(hasFocus);
 		 //Setting Background for various layouts
-		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.listView);
+		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.layout_body);
 	}
 
 

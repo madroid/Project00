@@ -9,8 +9,8 @@
         android:id="@+id/contacts_layout_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/common_title_padding_top_bottom"
         android:paddingTop="@dimen/common_title_padding_top_bottom" >
 
@@ -21,19 +21,19 @@
             android:gravity="center"
             android:text="@string/title_activity_contacts"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/app_title_font_size" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/contacts_layout_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/app_padding_left_right"
-        android:layout_marginRight="@dimen/app_padding_left_right"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/common_header_padding_top_bottom"
-        android:paddingTop="@dimen/common_header_padding_top_bottom" >
+        android:paddingBottom="@dimen/contacts_header_padding_top_bottom"
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right"
+        android:paddingTop="@dimen/contacts_header_padding_top_bottom" >
 
         <EditText
             android:id="@+id/contacts_edit_search"
@@ -42,7 +42,6 @@
             android:layout_marginRight="@dimen/row_contacts_elements_spacing"
             android:layout_weight="1"
             android:background="@drawable/shape_edittext_final"
-            android:ems="10"
             android:hint="Search Contacts"
             android:paddingBottom="@dimen/shape_edittext_padding_top_bottom"
             android:paddingLeft="@dimen/shape_edittext_padding_left_right"
@@ -59,14 +58,22 @@
             android:text="Add" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/contacts_list"
+    <LinearLayout
+        android:id="@+id/contacts_layout_body"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/divider_color"
-        android:dividerHeight="@dimen/common_divider_height"
-        android:smoothScrollbar="true"
-        android:textFilterEnabled="true" >
-    </ListView>
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <ListView
+            android:id="@+id/contacts_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/divider_color"
+            android:dividerHeight="@dimen/common_divider_height"
+            android:smoothScrollbar="true"
+            android:textFilterEnabled="true" >
+        </ListView>
+    </LinearLayout>
+    
 
 </LinearLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="shape_edittext_background_color">#FFFFFF</color>
-    <color name="shape_edittext_border_color">#FF9933</color>
+    <color name="shape_edittext_border_color">#FC721D</color>
     
     <color name="profile_image_border_color">#333366</color>
     <color name="divider_color">#b5b5b5</color>

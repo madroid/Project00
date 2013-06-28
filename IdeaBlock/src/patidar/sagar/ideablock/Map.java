@@ -89,9 +89,17 @@ public class Map extends Activity {
 					R.id.map)).getMap();
 			if (mMap != null) { // to check in case Google Play Services is Not
 								// Avaiable
+				uiSettings = mMap.getUiSettings();
+				uiSettings.setMyLocationButtonEnabled(true);
+				uiSettings.setRotateGesturesEnabled(false);
+				uiSettings.setTiltGesturesEnabled(false);
+				
 				placeMarker = new Marker[MAX_PLACES];
 				mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 				updatePlaces();
+				
+				
+				
 			} else {
 				Log.d("MAIN_MAP_ACTIVITY.JAVA",
 						"Google play service is not available");
@@ -99,14 +107,11 @@ public class Map extends Activity {
 
 		}
 
-		uiSettings = mMap.getUiSettings();
-		uiSettings.setMyLocationButtonEnabled(true);
-		uiSettings.setRotateGesturesEnabled(false);
-		uiSettings.setTiltGesturesEnabled(false);
 
 	}
 
 	private void updatePlaces() {
+		gps = new GPSTracker(_context);
 		gps = new GPSTracker(_context);
 		LatLng lastLatLng = new LatLng(gps.getLatitude(), gps.getLongitude());
 

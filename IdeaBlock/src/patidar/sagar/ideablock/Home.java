@@ -32,6 +32,7 @@ public class Home extends Activity {
 	ImageView merchants ;
 	ImageView myNotes ;
 	ImageView aroundMe ;
+	ImageView profile ;
 	
 	//For bitmap backgrounds
 	private LinearLayout layout_title;
@@ -65,7 +66,8 @@ public class Home extends Activity {
 		merchants = (ImageView) findViewById(R.id.image_merchants);
 		myNotes = (ImageView) findViewById(R.id.image_myNotes);
 		aroundMe = (ImageView) findViewById(R.id.image_aroundMe);
-
+		profile = (ImageView) findViewById(R.id.image_profilePic);
+		
 		this.text_id = (TextView) findViewById(R.id.userID);
 		this.text_name = (TextView) findViewById(R.id.username);
 		this.text_money = (TextView) findViewById(R.id.balanceAmount);
@@ -111,6 +113,8 @@ public class Home extends Activity {
 		USER_ID = i.getStringExtra("user_id");
 		USER_BALANCE = Integer.parseInt(i.getStringExtra("user_balance"));
 		text_money.setText("Rs. "+USER_BALANCE);
+		
+		profile.setX(sendMoney.getX());
 		
 		sendMoney.setOnClickListener(new View.OnClickListener() {
 

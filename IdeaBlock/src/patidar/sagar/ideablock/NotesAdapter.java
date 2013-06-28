@@ -77,11 +77,9 @@ public class NotesAdapter extends ArrayAdapter<HashMap<String, String>>{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				cntxt.startActivity(intent);
+				cntxt.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 			}
 		});
-		
-		
-		
 		return convertView;
 	}
 

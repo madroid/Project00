@@ -12,26 +12,22 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Camera;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -42,13 +38,12 @@ public class SendMoney extends Activity {
 	private EditText edit_pin ;
 	private EditText edit_comment ;
 	private ImageView image_send;
-	private ImageView image_settings ;
 	private ConnectionDetector cd ;
 	private Toast toast ;
 	private ProgressDialog pDialog;
 	private JSONObject jObj;
 	private int success ;
-
+	private static Context appContext ; 
 	private String SEND_AMOUNT = "amount";
 	private String SEND_TO_ID = "to_id";
 	private String SEND_PIN = "pin";
@@ -61,13 +56,13 @@ public class SendMoney extends Activity {
 	private LinearLayout layout_title;
 	private LinearLayout layout_body;
 	private LinearLayout layout_header;
-	private RelativeLayout layout_footer;
 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_money);
+		appContext = this.getApplicationContext();
 		toast =  new Toast(SendMoney.this);
 		toast.setGravity(Gravity.CENTER, 0, 0);
 		toast.setDuration(toast.LENGTH_LONG);
@@ -78,7 +73,6 @@ public class SendMoney extends Activity {
 		this.edit_pin = (EditText) findViewById(R.id.send_pin);
 		this.edit_receiver = (EditText) findViewById(R.id.send_receiverID);
 		this.image_send = (ImageView) findViewById(R.id.send_button);
-		this.image_settings = (ImageView) findViewById(R.id.send_settings);
 		//this.image_header = (ImageView) findViewById(R.id.image_sendMoney_header);
 		
 		Constants.setEditTextFontStyle(getAssets(), this.edit_amount,this.edit_comment,this.edit_pin,this.edit_receiver);
@@ -87,7 +81,6 @@ public class SendMoney extends Activity {
 		this.layout_body = (LinearLayout) findViewById(R.id.send_layout_body);
 		this.layout_title = (LinearLayout) findViewById(R.id.send_layout_title);
 		this.layout_header =  (LinearLayout) findViewById(R.id.send_layout_header);
-		this.layout_footer = (RelativeLayout) findViewById(R.id.send_layout_footer);
 
 		
 		Intent intent = getIntent();
@@ -125,14 +118,6 @@ public class SendMoney extends Activity {
 			}
 		});
 		
-		this.image_settings.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(SendMoney.this, "Settings for Send Money is not implemented yet! Inconvenience caused is deeply regretted.", Toast.LENGTH_LONG).show();
-			}
-		});
-		
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -141,11 +126,8 @@ public class SendMoney extends Activity {
 		 super.onWindowFocusChanged(hasFocus);
 		 Log.d("DEPOSIT DEBUG", "height: "+layout_title.getHeight());
 		 //Setting Background for various layouts
-		 this.layout_body.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.body_panel, layout_body.getHeight()));
-		 this.layout_title.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.title_panel, layout_title.getHeight()));
-		 this.layout_footer.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.footer_panel, layout_footer.getHeight()));
-   		 this.layout_header.setBackgroundDrawable(Constants.getRepeatingBackgroundX(this, R.drawable.header_panel, layout_header.getHeight()));
-	 }
+		 Constants.setVariousBackground(this, layout_title, layout_header, layout_body);
+	}
 
 
 	
@@ -157,7 +139,7 @@ public class SendMoney extends Activity {
 		@Override
 		protected void onPreExecute(){
 			super.onPreExecute();
-			pDialog = new ProgressDialog(SendMoney.this);
+			pDialog = new ProgressDialog(appContext);
 			pDialog.setMessage("Please wait...We are processing your request.");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);

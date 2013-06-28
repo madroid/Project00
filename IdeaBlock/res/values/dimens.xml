@@ -20,7 +20,7 @@
 	<dimen name="common_divider_height">1dp</dimen>
 	<dimen name="common_footer_panel_height">40dp</dimen>
 	<dimen name="common_box_height">54dp</dimen>
-	<dimen name="common_header_padding_top_bottom">4dp</dimen>
+	<dimen name="common_header_padding_top_bottom">8dp</dimen>
 	<dimen name="common_fotter_padding_left_right">5dp</dimen>
 	<!-- Send Money Dimenstions -->
 	
@@ -31,7 +31,7 @@
 	<dimen name="shape_edittext_padding_left_right">5dp</dimen>
 	<dimen name="shape_edittext_padding_top_bottom">3dp</dimen>
 	<dimen name="shape_edittext_intra_distance">10dp</dimen>
-	<dimen name="shape_edittext_border_width">1dp</dimen>
+	<dimen name="shape_edittext_border_width">0.5dp</dimen>
 	
 	
 	<!-- Application dimensions -->
@@ -44,6 +44,9 @@
 	<dimen name="row_contacts_text_padding_top">2dp</dimen>
 	<dimen name="row_contacts_image_intra_distance">1dp</dimen>
 	<dimen name="row_contacts_elements_spacing">2dp</dimen>
+	
+	<!-- Contacts dimension -->
+	<dimen name="contacts_header_padding_top_bottom">15dp</dimen>
 	
 	<!-- row transaction dimensions -->
 	<dimen name="row_transaction_intra_distance">1dp</dimen>
@@ -61,7 +64,7 @@
 	
 	<dimen name="home_logo_bar_height">35dp</dimen>
 	<dimen name="home_user_name_padding_left_right">10dp</dimen>
-	<dimen name="home_header_top_bottom_padding">4dp</dimen>
+	<dimen name="home_header_top_bottom_padding">6dp</dimen>
 	
 	<!-- Activity deposite -->
 

@@ -110,21 +110,5 @@
             android:src="@drawable/button_send" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/send_layout_footer"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/common_footer_panel_height"
-        android:orientation="vertical"
-        android:paddingRight="@dimen/common_fotter_padding_left_right"
-        android:paddingTop="@dimen/common_fotter_padding_left_right" >
-
-        <ImageView
-            android:id="@+id/send_settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/button_settings" />
-    </RelativeLayout>
 
 </LinearLayout>

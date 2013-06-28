@@ -28,10 +28,10 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/app_padding_left_right"
-        android:paddingRight="@dimen/app_padding_left_right" 
         android:paddingBottom="@dimen/common_header_padding_top_bottom"
-        android:paddingTop="@dimen/common_header_padding_top_bottom">
+        android:paddingLeft="@dimen/app_padding_left_right"
+        android:paddingRight="@dimen/app_padding_left_right"
+        android:paddingTop="@dimen/common_header_padding_top_bottom" >
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -53,6 +53,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/shape_edittext_intra_distance"
             android:orientation="horizontal" >
 
             <Spinner
@@ -85,13 +86,20 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/trans_list"
+    <LinearLayout
+        android:id="@+id/trans_layout_body"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/divider_color"
-        android:dividerHeight="@dimen/common_divider_height"
-        android:smoothScrollbar="true"
-        android:textFilterEnabled="true" />
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <ListView
+            android:id="@+id/trans_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/divider_color"
+            android:dividerHeight="@dimen/common_divider_height"
+            android:smoothScrollbar="true"
+            android:textFilterEnabled="true" />
+    </LinearLayout>
 
 </LinearLayout>

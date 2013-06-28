@@ -65,11 +65,10 @@ public class NoteDetails extends Activity {
 				int prev = position -1 ;
 				if(prev>-1){
 					position-- ;
-					HashMap<String, String> prevItem = Login.arrlistNotes.get(prev);
-					text_date_value.setText(prevItem.get("date"));
-					text_time_value.setText(prevItem.get("time"));
-					text_subject_value.setText(prevItem.get("subject"));
-					text_content.setText(prevItem.get("message"));
+					Intent intent = new Intent(NoteDetails.this,NoteDetails.class);
+					intent.putExtra("position", position);
+					startActivity(intent);
+					overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 				}
 				else if(prev<0 && !isLeftTriggered){
 					Toast.makeText(NoteDetails.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
@@ -86,11 +85,10 @@ public class NoteDetails extends Activity {
 				int next = position +1 ;
 				if(next<Login.arrlistNotes.size()){
 					position++;
-					HashMap<String, String> nextItem = Login.arrlistNotes.get(next);
-					text_date_value.setText(nextItem.get("date"));
-					text_time_value.setText(nextItem.get("time"));
-					text_subject_value.setText(nextItem.get("subject"));
-					text_content.setText(nextItem.get("message"));
+					Intent intent = new Intent(NoteDetails.this,NoteDetails.class);
+					intent.putExtra("position", position);
+					startActivity(intent);
+					overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 				}
 				else if(next>=Login.arrlistNotes.size() && !isRightTriggered){
 					Toast.makeText(NoteDetails.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
@@ -100,6 +98,14 @@ public class NoteDetails extends Activity {
 		});		
 		
 	}
+	
+	@Override
+	public void onBackPressed() {
+	    Intent intent = new Intent(NoteDetails.this,Notes.class);
+	    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	    startActivity(intent);
+	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

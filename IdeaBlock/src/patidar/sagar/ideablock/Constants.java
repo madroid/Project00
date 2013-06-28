@@ -102,11 +102,10 @@ public class Constants {
 	        return center_drawable;
     }
 	
-	public static void setVariousBackground(Activity context, View v1, View v2, View v3){
-		 v1.setBackgroundDrawable(Constants.getRepeatingBackgroundX(context, R.drawable.title_panel, v1.getHeight()));
-		 v2.setBackgroundDrawable(Constants.getRepeatingBackgroundX(context, R.drawable.header_panel, v2.getHeight()));
-		 v3.setBackgroundDrawable(Constants.getRepeatingBackgroundX(context, R.drawable.body_panel, v3.getHeight()));
-
+	public static void setVariousBackground(Activity context, View titleLayout, View headerLayout, View bodyLayout){
+		 titleLayout.setBackgroundDrawable(Constants.getRepeatingBackgroundX(context, R.drawable.title_panel, titleLayout.getHeight()));
+		 headerLayout.setBackgroundDrawable(Constants.getRepeatingBackgroundX(context, R.drawable.header_panel, headerLayout.getHeight()));
+		 bodyLayout.setBackgroundDrawable(Constants.getRepeatingBackgroundX(context, R.drawable.body_panel, bodyLayout.getHeight()));
 	}
 
 	

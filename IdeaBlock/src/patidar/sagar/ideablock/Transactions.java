@@ -23,7 +23,8 @@ public class Transactions extends Activity {
 	
 	private LinearLayout layout_title;
 	private LinearLayout layout_header;
-
+	private LinearLayout layout_body ;
+	
 	public static final String PAYMENT_ID = "trans_ID2";
 	public static final String PAYMENT_AMOUNT = "trans_amount2";
 	public static final String PAYMENT_DATE = "trans_date2";
@@ -48,8 +49,7 @@ public class Transactions extends Activity {
 		text_month_year = (TextView) findViewById(R.id.trans_text_month_year);
 		this.layout_title = (LinearLayout) findViewById(R.id.trans_layout_title);
 		this.layout_header =  (LinearLayout) findViewById(R.id.trans_layout_header);
-
-		
+		this.layout_body = (LinearLayout) findViewById(R.id.trans_layout_body);
 		context = getApplicationContext();
 
 		Constants.setTextViewFontStyle(getAssets(), this.text_title,this.text_month_year);
@@ -95,7 +95,7 @@ public class Transactions extends Activity {
 	 public void onWindowFocusChanged(boolean hasFocus){
 		 super.onWindowFocusChanged(hasFocus);
 		 //Setting Background for various layouts
-		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.listView);
+		 Constants.setVariousBackground(this, this.layout_title, this.layout_header, this.layout_body);
 	}
 
 	@Override

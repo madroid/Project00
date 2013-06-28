@@ -86,7 +86,7 @@ public class TransactionDetails extends Activity {
 					
 				}
 				else if(prev<0 && !isLeftTriggered){
-					Toast.makeText(TransactionDetails.this, "No more note on the left side", Toast.LENGTH_SHORT).show();
+					Toast.makeText(TransactionDetails.this, "No more on the left side", Toast.LENGTH_SHORT).show();
 					isLeftTriggered = true ;
 				}
 			}
@@ -106,7 +106,7 @@ public class TransactionDetails extends Activity {
 					overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 				}
 				else if(next>=TransactionAdapter.data_list.size() && !isRightTriggered){
-					Toast.makeText(TransactionDetails.this, "No more note on the right side", Toast.LENGTH_SHORT).show();
+					Toast.makeText(TransactionDetails.this, "No more on the right side", Toast.LENGTH_SHORT).show();
 					isRightTriggered = true ;
 				}
 			}
